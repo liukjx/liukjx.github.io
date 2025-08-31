@@ -50,8 +50,6 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        // you can add 'git' here for last modified from Git
-        // if you do rely on git for dates, ensure defaultDateType is 'modified'
         priority: ["frontmatter", "filesystem"],
       }),
       Plugin.SyntaxHighlighting({
@@ -67,6 +65,8 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
+      // ABC记谱法插件
+      createAbcNotationPlugin(),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
@@ -84,6 +84,86 @@ const config: QuartzConfig = {
       Plugin.NotFoundPage(),
     ],
   },
+}
+
+// ABC记谱法插件工厂函数
+function createAbcNotationPlugin() {
+  const escapeHtml = (unsafe) => unsafe
+    .replace(/\&/g, "&amp;")
+    .replace(/\</g, "&lt;")
+    .replace(/\>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/\'/g, "&#039;")
+
+  const processNode = (node) => {
+    if (node.type === 'code' && node.lang === 'abc') {
+      node.type = 'html'
+      node.value = `<div class="abc-notation-render" data-abc="${escapeHtml(node.value)}"></div>`
+      delete node.lang
+    }
+    
+    if (node.children) {
+      for (let i = 0; i < node.children.length; i++) {
+        processNode(node.children[i])
+      }
+    }
+  }
+
+  return {
+    name: "AbcNotation",
+    markdownPlugins() {
+      return [
+        () => (tree, _file) => processNode(tree),
+      ]
+    },
+    externalResources() {
+      return {
+        css: [],
+        js: [
+          {
+            src: "https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-basic-min.js",
+            loadTime: "afterDOMReady",
+            contentType: "external",
+          },
+          {
+            loadTime: "afterDOMReady",
+            contentType: "inline",
+            script: `
+              function renderAbcNotations() {
+                const containers = document.querySelectorAll('.abc-notation-render');
+                containers.forEach(container => {
+                  const abcData = container.getAttribute('data-abc');
+                  if (abcData && window.ABCJS) {
+                    try {
+                      container.innerHTML = '';
+                      ABCJS.renderAbc(container, abcData, {
+                        responsive: "resize",
+                        staffwidth: 740
+                      });
+                    } catch (error) {
+                      container.innerHTML = '<div class="abc-notation-error">乐谱渲染失败: ' + error.message + '</div>';
+                    }
+                  }
+                });
+              }
+
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', renderAbcNotations);
+              } else {
+                renderAbcNotations();
+              }
+
+              if (window.navigation) {
+                window.navigation.addEventListener('navigate', () => {
+                  setTimeout(renderAbcNotations, 100);
+                });
+              }
+            `,
+          },
+        ],
+      }
+    },
+  } as any
 }
 
 export default config
