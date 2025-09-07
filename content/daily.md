@@ -6,17 +6,43 @@ draft: "true"
 ## Daily Dictation 001-100
 
 ### daily english dictation 001
-$$Mother\ Teresa,who\ receive\underset{\smile}{d\ a}\ Nobel\ Peace\ Prize\ \overset{fɚ}{for}\ \overset{hɚ/ ɚ/ ə}{her}\ wor\underset{\smile}{k\ o}\overset{for}{\overline{n\ behalf\ of}} the\ poor\ ,dies\ in\ Calcutta,India$$
+
+$$
+\text{Mother Teresa, who \textbf{received a} Nobel Peace Prize }
+\underbrace{\text{\textbf{for her}}}_{\text{/fɚ‿ɚ/}}
+\text{ work }
+\underbrace{\text{\textbf{on behalf of}}}_{\text{/əˈn bɪˈhæf əv/}}
+\text{ the poor, dies in Calcutta, India.}
+$$
+
 
 $$she\ was\ 87\ year\underset{\smile}{s\ o}ld$$
 
 ### daily english dictation 002
-$$Jerry,\ wha\overset{\ \ \ t}{\overline{t\ t}}ime\ \overset{du, də, d}{do}\ \overset{ju, jə}{you}\ \overset{əv, əf}{have}?$$
-$$你知道现在几点了吗？$$
-$$I\ h\overset{ə}{\overline{a}}\overset{\quad f}{\overline{ve\ 5}}\ o'Clock$$
+$$
+\text{Jerry, }
+\underbrace{\text{\textbf{what time}}}_{\text{/wʌt‿taɪm/}}
+\text{ }
+\underbrace{\text{\textbf{do you}}}_{\text{/də‿jə/}}
+\text{ }
+\underbrace{\text{\textbf{have}}}_{\text{/həv/}}
+\text{?}
+$$
+
+你知道现在几点了吗？
+
+$$
+\text{I }\underbrace{\text{\textbf{h}əv}}_{\text{weak: /həv/}}\text{ five o'clock}
+\quad\Longrightarrow\quad
+\text{I }\underbrace{\text{əv}}_{\text{weaker: /əv/}}\text{ five o'clock}
+$$
 
 ### daily english dictation 003
-$$Ther\underset{\smile}{e\ }\overset{ɑr, ɑ, ə}{are}\ three\ things\ they\ \overset{əv, əf}{\overline{have}} learned\ \dot Never\ \overset{tu, tə, t}{to}\ discus\underset{\smile}{s\ w}ith\ people\ :religion，politics\ and\ the\ Great\ Pumpkin$$
+
+$$
+\text{\textbf{There're} three things \textbf{they've} learned never \textbf{to} discuss with people: religion, politics, and the Great Pumpkin.}
+$$
+
 
 ### daily english dictation 004
 $$\grave Don\overset{×}{\overline{'t}}\underset{\smile}{\ e}ver\ let\ anybody\ tell\ you\ you\ can\overset{×}{\overline{'t}} do\ some\overset{[n]}{\overline{thing}}$$
@@ -104,8 +130,6 @@ $$twen\cancel ty$$
 $$\overset{[I\ z]}{\overline{It’s}}\ a\ lofty,\ （probably\ impossible）\ goal！$$
 
 > lofty （房间）屋顶高的
->
-> 
 
 ### daily english dictation 011
 $$New\ York\ swep\overset{\quad th}{\overline{t\ th}}e\ Tampa\ Bay\ Rays\ by\ \overset{[idenical]}{iden\cancel tical}\ 4-2\ scores\ in\ a\ day-night\ doubleheader\ Wednesday.$$
