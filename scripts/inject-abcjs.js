@@ -16,31 +16,62 @@ if (!publicDir) {
 }
 
 const ABCJS_SCRIPT = `
-<script src="https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-basic-min.js"></script>
 <script>
+// ABC notation renderer - loads abcjs on demand
 (function() {
+  var ABCJS_LOADED = false;
+  var ABCJS_LOADING = false;
+  var PENDING_RENDER = false;
+
+  function loadAbcjs(cb) {
+    if (ABCJS_LOADED) { cb(); return; }
+    if (ABCJS_LOADING) { PENDING_RENDER = true; return; }
+    ABCJS_LOADING = true;
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-basic-min.js';
+    s.onload = function() {
+      ABCJS_LOADED = true;
+      ABCJS_LOADING = false;
+      cb();
+      if (PENDING_RENDER) { PENDING_RENDER = false; renderAbc(); }
+    };
+    s.onerror = function() {
+      console.warn('Failed to load abcjs library');
+    };
+    document.head.appendChild(s);
+  }
+
   function renderAbc() {
-    if (!window.ABCJS) return;
+    if (!window.ABCJS) {
+      loadAbcjs(function() { renderAbc(); });
+      return;
+    }
     document.querySelectorAll('.abc-notation-render').forEach(function(el) {
+      if (el.getAttribute('data-rendered')) return;
       var data = el.getAttribute('data-abc');
       if (!data) return;
       try {
         el.innerHTML = '';
+        el.setAttribute('data-rendered', '1');
         ABCJS.renderAbc(el, data, { responsive: 'resize', staffwidth: 740 });
       } catch(e) {
         el.innerHTML = '<div style="color:red;padding:1em;border:1px solid red">五线谱渲染失败: ' + e.message + '</div>';
       }
     });
   }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', renderAbc);
   } else {
     renderAbc();
   }
-  // SPA navigation
+
+  // SPA navigation re-render
   if (window.navigation) {
     window.navigation.addEventListener('navigate', function() { setTimeout(renderAbc, 150); });
   }
+  // Fallback: also listen for popstate (back/forward navigation)
+  window.addEventListener('popstate', function() { setTimeout(renderAbc, 150); });
 })();
 </script>`;
 

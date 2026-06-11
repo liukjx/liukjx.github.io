@@ -16,11 +16,11 @@ flowchart LR
 
 
 
-> [!TIP] > 我是一个TIP 
-> 
+> [!TIP] 
+> 我是一个TIP 
 
-> [!NOTE] > 我是一个NOTE 
-> 
+> [!NOTE] 
+> 我是一个NOTE 
 
 
 > [!WARNING] 
