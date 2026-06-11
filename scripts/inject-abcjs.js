@@ -16,6 +16,7 @@ if (!publicDir) {
 }
 
 const ABCJS_SCRIPT = `
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-audio.css">
 <script>
 // ABC notation renderer with MIDI playback
 (function() {
@@ -87,7 +88,6 @@ const ABCJS_SCRIPT = `
       if (window.ABCJS.synth && visualObj && visualObj[0]) {
         var audioDiv = document.createElement('div');
         audioDiv.className = 'abc-audio-controls';
-        audioDiv.style.cssText = 'margin:8px 0;padding:4px 8px;background:var(--lightgray, #f0f0f0);border-radius:4px;display:inline-block;';
         el.parentNode.insertBefore(audioDiv, el.nextSibling);
 
         var synth = new ABCJS.synth.SynthController();
