@@ -15,9 +15,9 @@ if (!publicDir) {
   process.exit(1);
 }
 
+const ABCJS_CSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-audio.css">';
+
 const ABCJS_SCRIPT = `
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-audio.css">
-<script>
 // ABC notation renderer with MIDI playback
 (function() {
   var ABCJS_LOADED = false;
@@ -118,14 +118,16 @@ const ABCJS_SCRIPT = `
   // Quartz SPA navigation
   document.addEventListener('nav', function() { setTimeout(renderAbc, 200); });
 })();
-</script>`;
+`;
 
 function processFile(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
   if (!content.includes('abc-notation-render')) return;
   
-  // Inject before </body>
-  content = content.replace('</body>', ABCJS_SCRIPT + '\n</body>');
+  // Inject CSS into <head>
+  content = content.replace('</head>', ABCJS_CSS + '\n</head>');
+  // Inject JS before </body>
+  content = content.replace('</body>', '<script>' + ABCJS_SCRIPT + '\n</script>\n</body>');
   fs.writeFileSync(filePath, content, 'utf8');
   console.log(`  ✓ ${path.relative(publicDir, filePath)}`);
 }
