@@ -17,28 +17,43 @@ if (!publicDir) {
 
 const ABCJS_SCRIPT = `
 <script>
-// ABC notation renderer - loads abcjs on demand
+// ABC notation renderer with MIDI playback
 (function() {
   var ABCJS_LOADED = false;
   var ABCJS_LOADING = false;
   var PENDING_RENDER = false;
+  var MIDI_LOADED = false;
+  var MIDI_LOADING = false;
+
+  function loadScript(src, cb) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.onload = cb;
+    s.onerror = function() { console.warn('Failed to load:', src); };
+    document.head.appendChild(s);
+  }
 
   function loadAbcjs(cb) {
     if (ABCJS_LOADED) { cb(); return; }
     if (ABCJS_LOADING) { PENDING_RENDER = true; return; }
     ABCJS_LOADING = true;
-    var s = document.createElement('script');
-    s.src = 'https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-basic-min.js';
-    s.onload = function() {
+    loadScript('https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-basic-min.js', function() {
       ABCJS_LOADED = true;
       ABCJS_LOADING = false;
+      // Also load MIDI module for audio playback
+      loadMidi();
       cb();
       if (PENDING_RENDER) { PENDING_RENDER = false; renderAbc(); }
-    };
-    s.onerror = function() {
-      console.warn('Failed to load abcjs library');
-    };
-    document.head.appendChild(s);
+    });
+  }
+
+  function loadMidi() {
+    if (MIDI_LOADED || MIDI_LOADING) return;
+    MIDI_LOADING = true;
+    loadScript('https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-midi.js', function() {
+      MIDI_LOADED = true;
+      MIDI_LOADING = false;
+    });
   }
 
   function renderAbc() {
@@ -53,11 +68,45 @@ const ABCJS_SCRIPT = `
       try {
         el.innerHTML = '';
         el.setAttribute('data-rendered', '1');
-        ABCJS.renderAbc(el, data, { responsive: 'resize', staffwidth: 740 });
+
+        // Render visual notation
+        var visualObj = ABCJS.renderAbc(el, data, { responsive: 'resize', staffwidth: 740 });
+
+        // Add play controls if MIDI is available
+        addAudioControls(el, visualObj, data);
       } catch(e) {
         el.innerHTML = '<div style="color:red;padding:1em;border:1px solid red">五线谱渲染失败: ' + e.message + '</div>';
       }
     });
+  }
+
+  function addAudioControls(el, visualObj, data) {
+    // Try to add playback - poll until ABCJS.synth is available
+    var attempts = 0;
+    function tryAddControls() {
+      if (window.ABCJS.synth && visualObj && visualObj[0]) {
+        var audioDiv = document.createElement('div');
+        audioDiv.className = 'abc-audio-controls';
+        audioDiv.style.cssText = 'margin:8px 0;padding:4px 8px;background:var(--lightgray, #f0f0f0);border-radius:4px;display:inline-block;';
+        el.parentNode.insertBefore(audioDiv, el.nextSibling);
+
+        var synth = new ABCJS.synth.SynthController();
+        synth.load(audioDiv, null, {
+          displayLoop: true,
+          displayRestart: true,
+          displayPlay: true,
+          displayProgress: true,
+          displayWarp: false,
+        });
+        synth.setTune(visualObj[0], false, { program: 0 });
+        return;
+      }
+      attempts++;
+      if (attempts < 30) {
+        setTimeout(tryAddControls, 200);
+      }
+    }
+    tryAddControls();
   }
 
   if (document.readyState === 'loading') {
@@ -66,7 +115,7 @@ const ABCJS_SCRIPT = `
     renderAbc();
   }
 
-  // Quartz SPA navigation: nav 事件在页面内容替换后触发
+  // Quartz SPA navigation
   document.addEventListener('nav', function() { setTimeout(renderAbc, 200); });
 })();
 </script>`;
