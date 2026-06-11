@@ -23,8 +23,6 @@ const ABCJS_SCRIPT = `
   var ABCJS_LOADED = false;
   var ABCJS_LOADING = false;
   var PENDING_RENDER = false;
-  var MIDI_LOADED = false;
-  var MIDI_LOADING = false;
 
   function loadScript(src, cb) {
     var s = document.createElement('script');
@@ -41,19 +39,8 @@ const ABCJS_SCRIPT = `
     loadScript('https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-basic-min.js', function() {
       ABCJS_LOADED = true;
       ABCJS_LOADING = false;
-      // Also load MIDI module for audio playback
-      loadMidi();
       cb();
       if (PENDING_RENDER) { PENDING_RENDER = false; renderAbc(); }
-    });
-  }
-
-  function loadMidi() {
-    if (MIDI_LOADED || MIDI_LOADING) return;
-    MIDI_LOADING = true;
-    loadScript('https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-midi.js', function() {
-      MIDI_LOADED = true;
-      MIDI_LOADING = false;
     });
   }
 
