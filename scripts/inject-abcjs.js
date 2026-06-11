@@ -15,7 +15,7 @@ if (!publicDir) {
   process.exit(1);
 }
 
-const ABCJS_CSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-audio.css">';
+const ABCJS_CSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/abcjs@6.2.2/abcjs-audio.css">';
 
 const ABCJS_SCRIPT = `
 // ABC notation renderer with MIDI playback
