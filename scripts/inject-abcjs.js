@@ -66,12 +66,8 @@ const ABCJS_SCRIPT = `
     renderAbc();
   }
 
-  // SPA navigation re-render
-  if (window.navigation) {
-    window.navigation.addEventListener('navigate', function() { setTimeout(renderAbc, 150); });
-  }
-  // Fallback: also listen for popstate (back/forward navigation)
-  window.addEventListener('popstate', function() { setTimeout(renderAbc, 150); });
+  // Quartz SPA navigation: nav 事件在页面内容替换后触发
+  document.addEventListener('nav', function() { setTimeout(renderAbc, 200); });
 })();
 </script>`;
 
