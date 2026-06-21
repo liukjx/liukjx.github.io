@@ -1,7 +1,7 @@
 /**
  * process-tikz.js — Quartz post-build for ```tikz blocks
  *
- * Pre-compiles TikZ to SVG using pdflatex + dvisvgm.
+ * Pre-compiles TikZ to SVG using latex + dvisvgm.
  * Supports ALL packages (circuitikz, pgfplots, tikz-cd, chemfig, ...).
  * Output is pure SVG — no WASM, no CDN, instant loading.
  *
@@ -45,8 +45,8 @@ function compileTikz(code) {
   fs.writeFileSync(texPath, texContent, 'utf-8');
 
   try {
-    // Step 1: pdflatex
-    var r1 = cp.spawnSync('pdflatex', [
+    // Step 1: latex
+    var r1 = cp.spawnSync('latex', [
       '-interaction=nonstopmode',
       '-halt-on-error',
       '-output-directory=' + tmpDir,
@@ -56,7 +56,7 @@ function compileTikz(code) {
     if (r1.status !== 0 && r1.status !== 1) {
       // check for fatal error
       var log = r1.stderr.toString() + r1.stdout.toString();
-      if (log.indexOf('Fatal') !== -1) return { error: 'pdflatex failed' };
+      if (log.indexOf('Fatal') !== -1) return { error: 'latex failed' };
     }
 
     var dviPath = path.join(tmpDir, id + '.dvi');
