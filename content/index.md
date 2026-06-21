@@ -269,3 +269,60 @@ function animate() {
 }
 animate();
 ```
+---
+
+### 🖱️ 带 OrbitControls 的交互场景（可拖拽旋转）
+
+```threejs-orbit
+var scene = new THREE.Scene();
+scene.background = new THREE.Color(0x1a1a2e);
+
+var camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
+camera.position.set(4, 3, 5);
+camera.lookAt(0, 0, 0);
+
+var renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(w, h);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+container.appendChild(renderer.domElement);
+
+var gridHelper = new THREE.GridHelper(10, 10, 0x4ecdc4, 0x45b7d1);
+scene.add(gridHelper);
+
+var cubes = [];
+var colors = [0xff6b6b, 0x4ecdc4, 0x45b7d1, 0xf9ca24, 0xa29bfe, 0xfd79a8];
+for (var i = 0; i < 12; i++) {
+  var size = 0.3 + Math.random() * 0.5;
+  var geo = new THREE.BoxGeometry(size, size, size);
+  var mat = new THREE.MeshStandardMaterial({
+    color: colors[i % colors.length],
+    metalness: 0.4,
+    roughness: 0.3
+  });
+  var cube = new THREE.Mesh(geo, mat);
+  var angle = (i / 12) * Math.PI * 2;
+  var radius = 1.5 + Math.random() * 1;
+  cube.position.set(Math.cos(angle) * radius, Math.random() * 2 - 0.5, Math.sin(angle) * radius);
+  cube.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+  scene.add(cube);
+  cubes.push({ mesh: cube, angle: angle, radius: radius, speed: 0.002 + Math.random() * 0.005 });
+}
+
+var ambient = new THREE.AmbientLight(0x303050);
+scene.add(ambient);
+var light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(3, 5, 3);
+scene.add(light);
+
+var controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+```
