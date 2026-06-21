@@ -36,43 +36,33 @@ flowchart LR
 
 <canvas id="three-canvas" style="width:100%; height:400px; border-radius:12px;"></canvas>
 
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
-  }
-}
-</script>
-
-<script type="module">
-import * as THREE from 'three';
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
 function initThree() {
-  const canvas = document.getElementById('three-canvas');
+  var canvas = document.getElementById('three-canvas');
   if (!canvas || canvas.dataset.initialized) return;
 
-  const rect = canvas.getBoundingClientRect();
-  const w = rect.width || 600;
-  const h = rect.height || 400;
+  var w = canvas.clientWidth || 600;
+  var h = canvas.clientHeight || 400;
 
-  const scene = new THREE.Scene();
+  var scene = new THREE.Scene();
   scene.background = new THREE.Color(0x1a1a2e);
 
-  const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
+  var camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
   camera.position.z = 3;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
   renderer.setSize(w, h);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshStandardMaterial({ color: 0x00bfff, metalness: 0.3, roughness: 0.4 });
-  const cube = new THREE.Mesh(geometry, material);
+  var geometry = new THREE.BoxGeometry(1, 1, 1);
+  var material = new THREE.MeshStandardMaterial({ color: 0x00bfff, metalness: 0.3, roughness: 0.4 });
+  var cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
 
-  const ambient = new THREE.AmbientLight(0x404040);
+  var ambient = new THREE.AmbientLight(0x404040);
   scene.add(ambient);
-  const light = new THREE.DirectionalLight(0xffffff, 1);
+  var light = new THREE.DirectionalLight(0xffffff, 1);
   light.position.set(1, 2, 2);
   scene.add(light);
 
@@ -86,8 +76,8 @@ function initThree() {
 
   canvas.dataset.initialized = 'true';
 
-  window.addEventListener('resize', () => {
-    const r = canvas.getBoundingClientRect();
+  window.addEventListener('resize', function() {
+    var r = canvas.getBoundingClientRect();
     renderer.setSize(r.width, r.height);
     camera.aspect = r.width / r.height;
     camera.updateProjectionMatrix();
