@@ -329,20 +329,3 @@ animate();
 
 ---
 
-### 📐 TikZ 矢量图测试
-
-```tikz
-\begin{document}
-\begin{tikzpicture}
-\draw[help lines] (0,0) grid (5,3);
-\draw[->,thick] (0,0) -- (5.3,0) node[right] {x};
-\draw[->,thick] (0,0) -- (0,3.3) node[above] {y};
-\draw[red,thick] (0,0) -- (4,2);
-\filldraw[fill=yellow!80!black] (3,1.5) circle (0.3);
-\draw (0,0) rectangle (1,1);
-\draw (1,1) rectangle (2,2);
-\draw (2,2) rectangle (3,3);
-\node at (3,2.5) {Hello};
-\end{tikzpicture}
-\end{document}
-```
