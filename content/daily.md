@@ -810,7 +810,8 @@ $$
 $$
 
 $$
-\text{like Thor and the Green Lantern.}$$
+\text{like Thor and the Green Lantern.}
+$$
 
 
 > as usual → /æz‿ˈjuːʒuəl/（z + j → /ʒ/）
