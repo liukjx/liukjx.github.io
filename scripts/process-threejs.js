@@ -36,14 +36,14 @@ function processHtml(filePath, html) {
 
     // Decode HTML entities and strip syntax-highlighting tags
     var code = stripHtmlTags(decodeHtmlEntities(encodedCode));
-    var safeCode = code.replace(/<\/script>/gi, '<\\/script>');
+    var safeCode = code.replace(/<\/script>/gi, '<\\/script>'); // escape </script> inside user code to avoid early closing
     if (!safeCode.trim()) return match;
 
     // Build orbit control wrapper if needed
     var extraScript = '';
     var orbitWrap = '';
     if (hasOrbit) {
-      extraScript = '<script src="' + ORBIT_CDN + '"><\\/script>\n  ';
+      extraScript = '<script src="' + ORBIT_CDN + '"></script>\n  ';
       orbitWrap = [
         'var controls = null;',
         'var __origRAF = window.requestAnimationFrame;',
@@ -60,7 +60,7 @@ function processHtml(filePath, html) {
       '<div class="threejs-wrapper" style="position:relative;width:100%;height:400px;border-radius:12px;overflow:hidden;background:#1a1a2e;margin:1em 0;">',
       '  <div id="' + cid + '" style="width:100%;height:100%;"></div>',
       '</div>',
-      '<script src="' + CDN + '"><\\/script>',
+      '<script src="' + CDN + '"></script>',
       extraScript,
       '<script>',
       'function ' + fname + '() {',
@@ -82,7 +82,7 @@ function processHtml(filePath, html) {
       '  ' + fname + '();',
       '}',
       "document.addEventListener('nav', " + fname + ');',
-      '<\\/script>'
+      '</script>'
     ].join('\n');
   });
 }
