@@ -92,7 +92,7 @@ title: "第5课：悬念、伏笔与揭示 — 信息的操控艺术"
 > 2. **定位悬念**——作者在哪些地方制造了信息差？（观众知道而角色不知道？还是反过来？）
 > 3. **评价揭示**——揭示是"啊哈"还是"什么鬼"？有没有伏笔支撑？
 > 4. **检查 Trope**——以下哪些出现在作品中？
-> `Chekhov's Gun``Dramatic Irony``Cliffhanger``Deus ex Machina`
+> `Chekhov's Gun` `Dramatic Irony` `Cliffhanger` `Deus ex Machina`
 
 ## 推荐资源
 

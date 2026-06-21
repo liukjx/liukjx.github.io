@@ -20,7 +20,7 @@ title: "叙事套路宏观领域地图 — 剧情分析的7个维度"
   
 **角色变化的套路**——角色在故事中怎么改变也有固定轨迹：救赎弧线、堕落弧线、觉醒弧线、从平凡到非凡。
 
-举例：`Anti-Hero``The Mentor``Foil``Redemption Arc`（还有几十种角色型套路——关键不是记住它们，而是意识到"角色这个维度本身就有一整套模式库"）
+举例：`Anti-Hero` `The Mentor` `Foil` `Redemption Arc`（还有几十种角色型套路——关键不是记住它们，而是意识到"角色这个维度本身就有一整套模式库"）
 
 ### 📖 2. 情节领域
 
@@ -32,7 +32,7 @@ title: "叙事套路宏观领域地图 — 剧情分析的7个维度"
   
 **结局的套路**——故事怎么收场？大团圆、悲剧、苦乐参半、开放式、循环结局（回到起点但已改变）。
 
-举例：`MacGuffin``Chekhov's Gun``Deus ex Machina``Cliffhanger`
+举例：`MacGuffin` `Chekhov's Gun` `Deus ex Machina` `Cliffhanger`
 
 ### 🌍 3. 世界观/设定领域
 
@@ -44,7 +44,7 @@ title: "叙事套路宏观领域地图 — 剧情分析的7个维度"
   
 **科幻/奇幻的常见模板**——选定一个"what if"假设，然后推演其逻辑后果。比如"如果时间旅行存在"、"如果人类可以心灵感应"、"如果AI比人类聪明"。
 
-举例：`Applied Phlebotinum``Dystopia``Our Monsters Are Different`
+举例：`Applied Phlebotinum` `Dystopia` `Our Monsters Are Different`
 
 ### 💬 4. 对话/台词领域
 
@@ -58,7 +58,7 @@ title: "叙事套路宏观领域地图 — 剧情分析的7个维度"
   
 **说明性对话的套路**——作者需要让观众知道一些背景信息，但不能太生硬。"As you know……"（你我都知道……）式的对话是最偷懒的做法。
 
-举例：`As You Know``Evil Gloating`（这个领域的具体 trope 往往以"台词模式"而非"情节模式"存在）
+举例：`As You Know` `Evil Gloating`（这个领域的具体 trope 往往以"台词模式"而非"情节模式"存在）
 
 ### 🎭 5. 叙事手法领域
 
@@ -70,7 +70,7 @@ title: "叙事套路宏观领域地图 — 剧情分析的7个维度"
   
 **信息释放的套路**——什么时候让观众知道什么信息是关键。伏笔（先埋后收）、悬念（延迟满足）、揭示（突然改变认知）、戏剧性反讽（观众知道角色不知道）。
 
-举例：`Unreliable Narrator``Rashomon-Style``In Medias Res``Dramatic Irony`
+举例：`Unreliable Narrator` `Rashomon-Style` `In Medias Res` `Dramatic Irony`
 
 ### 📜 6. 主题/寓意领域
 
@@ -82,7 +82,7 @@ title: "叙事套路宏观领域地图 — 剧情分析的7个维度"
   
 **主题表达的套路**——主题不一定直接说出来。常见手法包括：通过角色的结局暗示（他得到了想要的但失去了更重要的）、通过象征物反复出现、通过对比人物凸显。
 
-举例：`Aesop``Karmic Death`（主题类套路通常不叫具体的"trope 名"，而是通过整体叙事体现的）
+举例：`Aesop` `Karmic Death`（主题类套路通常不叫具体的"trope 名"，而是通过整体叙事体现的）
 
 ### 🔄 7. 元叙事/跨媒体领域
 
@@ -94,7 +94,7 @@ title: "叙事套路宏观领域地图 — 剧情分析的7个维度"
   
 **类型惯例的套路**——每一种故事类型都有自己的"观众期待"。恐怖片观众期待最后有反转惊吓、爱情片观众期待有误会和重逢、动作片观众期待有最后一刻营救。这些期待本身就是套路。
 
-举例：`Fourth Wall Break``Nested Story`
+举例：`Fourth Wall Break` `Nested Story`
 
 ## 如何使用这个领域地图
 

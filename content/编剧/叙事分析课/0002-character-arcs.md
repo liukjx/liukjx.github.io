@@ -99,7 +99,7 @@ title: "第2课：人物弧线 — 情节的驱动力"
 > 3. **识别角色原型**——能找到导师、阴影、捣蛋鬼吗？
 > 4. **对照角色**——哪个角色与主角形成对比？这种对比强调了主角的什么特质？
 > 5. **检查 Trope**——你能在这部作品中找到以下哪些？
-> `Anti-Hero``The Mentor``Redemption Arc``Well-Intentioned Extremist``Freudian Excuse``Foil``Tsundere``Love Triangle`
+> `Anti-Hero` `The Mentor` `Redemption Arc` `Well-Intentioned Extremist` `Freudian Excuse` `Foil` `Tsundere` `Love Triangle`
 
 ## 推荐资源
 
