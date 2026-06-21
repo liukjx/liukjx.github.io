@@ -329,3 +329,109 @@ animate();
 
 ---
 
+## 🎨 Inline SVG 示例
+
+### 坐标系 + 折线（替代之前 TikZ 测试）
+
+<svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;background:#1a1a2e;border-radius:8px;display:block;margin:1em 0;">
+  <style>
+    .axis { stroke: #888; stroke-width: 1.5; }
+    .grid { stroke: #2a2a4e; stroke-width: 0.5; }
+    .line1 { stroke: #ff6b6b; stroke-width: 2.5; fill: none; }
+    .label { fill: #ccc; font: 14px sans-serif; }
+    .title { fill: #eee; font: 16px sans-serif; font-weight: bold; }
+  </style>
+  <line class="grid" x1="50" y1="50" x2="50" y2="250"/>
+  <line class="grid" x1="120" y1="50" x2="120" y2="250"/>
+  <line class="grid" x1="190" y1="50" x2="190" y2="250"/>
+  <line class="grid" x1="260" y1="50" x2="260" y2="250"/>
+  <line class="grid" x1="330" y1="50" x2="330" y2="250"/>
+  <line class="grid" x1="400" y1="50" x2="400" y2="250"/>
+  <line class="grid" x1="470" y1="50" x2="470" y2="250"/>
+  <line class="grid" x1="50" y1="50" x2="470" y2="50"/>
+  <line class="grid" x1="50" y1="100" x2="470" y2="100"/>
+  <line class="grid" x1="50" y1="150" x2="470" y2="150"/>
+  <line class="grid" x1="50" y1="200" x2="470" y2="200"/>
+  <line class="axis" x1="50" y1="250" x2="490" y2="250"/>
+  <line class="axis" x1="50" y1="250" x2="50" y2="30"/>
+  <polygon points="485,250 490,250 487.5,244" fill="#888"/>
+  <polygon points="50,35 50,30 44,32.5" fill="#888"/>
+  <polyline class="line1" points="50,220 120,180 190,100 260,130 330,70 400,90 470,50"/>
+  <circle cx="50" cy="220" r="4" fill="#ff6b6b"/>
+  <circle cx="120" cy="180" r="4" fill="#ff6b6b"/>
+  <circle cx="190" cy="100" r="4" fill="#ff6b6b"/>
+  <circle cx="260" cy="130" r="4" fill="#ff6b6b"/>
+  <circle cx="330" cy="70" r="4" fill="#ff6b6b"/>
+  <circle cx="400" cy="90" r="4" fill="#ff6b6b"/>
+  <circle cx="470" cy="50" r="4" fill="#ff6b6b"/>
+  <text class="label" x="240" y="280" text-anchor="middle">X 轴</text>
+  <text class="label" x="20" y="150" text-anchor="middle" transform="rotate(-90,20,150)">Y 轴</text>
+  <text class="title" x="260" y="20" text-anchor="middle">折线图示例</text>
+</svg>
+
+### 柱状图 + 渐变
+
+<svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;background:#1a1a2e;border-radius:8px;display:block;margin:1em 0;">
+  <defs>
+    <linearGradient id="barGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="100%" stop-color="#ee5a24"/>
+    </linearGradient>
+    <linearGradient id="barGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ecdc4"/>
+      <stop offset="100%" stop-color="#0abde3"/>
+    </linearGradient>
+    <linearGradient id="barGrad3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9ca24"/>
+      <stop offset="100%" stop-color="#f0932b"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .bar-label { fill: #ccc; font: 13px sans-serif; text-anchor: middle; }
+    .val-label { fill: #eee; font: 12px sans-serif; text-anchor: middle; }
+    .title2 { fill: #eee; font: 16px sans-serif; font-weight: bold; text-anchor: middle; }
+    .axis-line { stroke: #555; stroke-width: 1; }
+  </style>
+  <text class="title2" x="260" y="25">柱状图</text>
+  <line class="axis-line" x1="60" y1="270" x2="480" y2="270"/>
+  <line class="axis-line" x1="60" y1="50" x2="60" y2="270"/>
+  <rect x="80" y="170" width="60" height="100" fill="url(#barGrad1)" rx="4"/>
+  <rect x="170" y="120" width="60" height="150" fill="url(#barGrad2)" rx="4"/>
+  <rect x="260" y="80" width="60" height="190" fill="url(#barGrad3)" rx="4"/>
+  <rect x="350" y="140" width="60" height="130" fill="#a29bfe" rx="4"/>
+  <text class="val-label" x="110" y="162">34</text>
+  <text class="val-label" x="200" y="112">51</text>
+  <text class="val-label" x="290" y="72">73</text>
+  <text class="val-label" x="380" y="132">43</text>
+  <text class="bar-label" x="110" y="292">Q1</text>
+  <text class="bar-label" x="200" y="292">Q2</text>
+  <text class="bar-label" x="290" y="292">Q3</text>
+  <text class="bar-label" x="380" y="292">Q4</text>
+</svg>
+
+### 带连接线的节点图
+
+<svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;background:#1a1a2e;border-radius:8px;display:block;margin:1em 0;">
+  <style>
+    .node-rect { fill: #0d3b66; stroke: #4ecdc4; stroke-width: 2; rx: 6; }
+    .node-text { fill: #eee; font: 14px sans-serif; text-anchor: middle; dominant-baseline: central; }
+    .edge { stroke: #555; stroke-width: 1.5; fill: none; stroke-dasharray: 5,3; }
+    .title3 { fill: #eee; font: 16px sans-serif; font-weight: bold; text-anchor: middle; }
+  </style>
+  <text class="title3" x="260" y="20">网络拓扑</text>
+  <path class="edge" d="M 260 80 C 140 110, 100 130, 100 160"/>
+  <path class="edge" d="M 260 80 C 260 110, 200 130, 200 160"/>
+  <path class="edge" d="M 260 80 C 320 110, 300 130, 300 160"/>
+  <path class="edge" d="M 260 80 L 420 160"/>
+  <rect class="node-rect" x="210" y="55" width="100" height="35"/>
+  <text class="node-text" x="260" y="72">核心路由</text>
+  <rect class="node-rect" x="60" y="160" width="100" height="35" stroke="#ff6b6b"/>
+  <text class="node-text" x="110" y="177">节点 A</text>
+  <rect class="node-rect" x="160" y="160" width="100" height="35" stroke="#f9ca24"/>
+  <text class="node-text" x="210" y="177">节点 B</text>
+  <rect class="node-rect" x="260" y="160" width="100" height="35" stroke="#45b7d1"/>
+  <text class="node-text" x="310" y="177">节点 C</text>
+  <rect class="node-rect" x="370" y="160" width="100" height="35" stroke="#a29bfe"/>
+  <text class="node-text" x="420" y="177">节点 D</text>
+</svg>
+
