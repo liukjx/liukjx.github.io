@@ -334,12 +334,13 @@ animate();
 ```tikz
 \begin{document}
 \begin{tikzpicture}
-\draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
-\draw[->] (-0.2,0) -- (4.2,0) node[right] {$x$};
-\draw[->] (0,-1.2) -- (0,4.2) node[above] {$f(x)$};
-\draw[color=red] plot (\x,\x) node[right] {$f(x) =x$};
-\draw[color=blue] plot (\x,{sin(\x r)}) node[right] {$f(x) = \sin x$};
-\draw[color=orange] plot (\x,{0.05*exp(\x)}) node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
+\draw[help lines] (0,0) grid (4,3);
+\draw[->,thick] (0,0) -- (4.3,0) node[right] {$x$};
+\draw[->,thick] (0,0) -- (0,3.3) node[above] {$y$};
+\draw[red,thick] (0,0) -- (3,3);
+\draw[blue,thick] plot[smooth] coordinates{(0,0)(0.5,1.5)(1,2.2)(1.5,2.6)(2,2.8)(2.5,2.95)(3,3)};
+\filldraw[fill=yellow!80!black] (2.5,1.5) circle (0.4);
+\node at (2.5,1.5) {+};
 \end{tikzpicture}
 \end{document}
 ```
