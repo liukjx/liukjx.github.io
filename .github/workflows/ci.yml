@@ -44,6 +44,8 @@ jobs:
         run: node scripts/inject-abcjs.js quartz/public
       - name: Process Three.js code blocks
         run: node scripts/process-threejs.js quartz/public
+      - name: Process TikZ code blocks
+        run: node scripts/process-tikz.js quartz/public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
