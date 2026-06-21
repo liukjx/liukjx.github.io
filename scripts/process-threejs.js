@@ -35,7 +35,9 @@ function processHtml(filePath, html) {
     var cid = 'threejs-container-' + blockCounter;
 
     // Decode HTML entities and strip syntax-highlighting tags
-    var code = stripHtmlTags(decodeHtmlEntities(encodedCode));
+    // Strip HTML tags FIRST (before decodeHtmlEntities) so that &lt; / &gt;
+    // entities don't become < > and match the tag-stripping regex.
+    var code = decodeHtmlEntities(stripHtmlTags(encodedCode));
     var safeCode = code.replace(/<\/script>/gi, '<\\/script>'); // escape </script> inside user code to avoid early closing
     if (!safeCode.trim()) return match;
 
