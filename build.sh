@@ -20,6 +20,12 @@ npx quartz build --concurrency 1
 echo "=== Step 4: Inject abcjs library ==="
 node "$SCRIPT_DIR/inject-abcjs.js" "$BLOG_DIR/quartz/public"
 
+echo "=== Step 5: Process Three.js code blocks ==="
+node "$SCRIPT_DIR/process-threejs.js" "$BLOG_DIR/quartz/public"
+
+echo "=== Step 6: Compile TikZ diagrams to SVG ==="
+node "$SCRIPT_DIR/process-tikz.js" "$BLOG_DIR/quartz/public"
+
 echo "=== Build complete! ==="
 echo "Output: $BLOG_DIR/quartz/public"
 echo ""
