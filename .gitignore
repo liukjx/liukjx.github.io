@@ -8,3 +8,5 @@ private/
 .claude/
 CLAUDE.md
 .idea/
+reasonix.toml
+.agents/
