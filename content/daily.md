@@ -532,13 +532,15 @@ $$
 
 ### daily english dictation 013
 
-$$ \text{Asian tiger mosquitoes are }
+$$
+\text{Asian tiger mosquitoes are }
 \underbrace{\text{native to}}_{\text{/ˈneɪtɪv‿tə/}}
 \text{ the tropics of Southeast Asia, but }
 \underbrace{\text{in the}}_{\text{/ɪn‿nə/}}
 \text{ past few years }
 \underbrace{\text{they've spread}}_{\text{/ðeɪv‿sprɛd/}}
-\text{ all across the southeastern United States.} $$
+\text{ all across the southeastern United States.}
+$$
 
 
 > mosquitoes → /məˈskiːtoʊz/（s 读 /z/，注意 sk 发音）
@@ -661,11 +663,13 @@ $$
 \underbrace{\text{crashed into}}_{\text{/kræʃt‿ˈɪntu/}}
 \text{ a Ferris wheel at a rural festival in Australia, }
 $$
-$$ \text{yet somehow }
+$$
+\text{yet somehow }
 \underbrace{\text{no one}}_{\text{/noʊ‿wʌn/}}
 \text{ on the amusement ride }
 \underbrace{\text{nor the}}_{\text{/nɔr‿ðə/}}
-\text{ plane was hurt.} $$
+\text{ plane was hurt.}
+$$
 
 
 > ultralight plane → /ˈʌltrəlaɪt‿pleɪn/（Held t）
@@ -722,9 +726,11 @@ $$
 \text{ a prestigious Long Island high school.}
 $$
 
-$$ \text{This college student is }
+$$
+\text{This college student is }
 \underbrace{\text{accused of}}_{\text{/əˈkjuːzd‿əv/}}
-\text{ taking the entrance exam for at least 6 students.} $$
+\text{ taking the entrance exam for at least 6 students.}
+$$
 
 
 > An alleged → /æn‿əˈlɛdʒd/（n 与 ə 连读）
@@ -741,9 +747,11 @@ $$
 \text{ takes the World Series opener on a cool night.}
 $$
 
-$$ \text{It was 49 degrees at }
+$$
+\text{It was 49 degrees at }
 \underbrace{\text{the start of the}}_{\text{/ðə‿stɑrt‿ə}\cancel{\text{f}}\text{‿ðə/}}
-\text{ game.} $$
+\text{ game.}
+$$
 
 
 > St. → /seɪnt/ → /sən(t)/（快速口语中弱化，t 可轻读或省略）
@@ -781,7 +789,8 @@ $$
 \text{ thing you look forward to instead of, you know,}
 $$
 
-$$ \text{some workouts you dread and you }
+$$
+\text{some workouts you dread and you }
 \underbrace{\text{think of it as}}_{\text{/θɪŋk‿əv‿ɪt‿æz/}}
 \text{ work and this is just fun.}
 $$
@@ -800,7 +809,8 @@ $$
 \underbrace{\text{from recent movies}}_{\text{/frəm‿ˈriːsənt‿ˈmuːviz/}}\text{,}
 $$
 
-$$ \text{like Thor and the Green Lantern.}$$
+$$
+\text{like Thor and the Green Lantern.}$$
 
 
 > as usual → /æz‿ˈjuːʒuəl/（z + j → /ʒ/）
@@ -835,7 +845,8 @@ $$
 \underbrace{\text{landing without gear}}_{\text{/ˈlændɪŋ‿wɪˈðaʊt‿gɪr/}}\text{,}
 $$
 
-$$ \text{and that }
+$$
+\text{and that }
 \underbrace{\text{he and his}}_{\text{/hi‿ən‿ɪz/}}
 \text{ fellow pilots train for these }
 \underbrace{\text{types of incidents}}_{\text{/taɪps‿əv‿ˈɪnsɪdənts/}}\text{.}
@@ -856,7 +867,8 @@ $$
 \underbrace{\text{love to hate}}_{\text{/lʌv‿tə‿heɪt/}}\text{!}
 $$
 
-$$ \text{But now a new breed of broccoli, super broccoli, developed in Britain }
+$$
+\text{But now a new breed of broccoli, super broccoli, developed in Britain }
 \underbrace{\text{may protect against}}_{\text{/meɪ‿prəˈtɛkt‿əˈgɛnst/}}
 \text{ heart disease and even some }
 \underbrace{\text{kinds of cancers}}_{\text{/kaɪndz‿əv‿ˈkænsərz/}}\text{.}
@@ -899,7 +911,8 @@ $$
 \text{ 30 years or more to safely }
 \underbrace{\text{decommission that facility}}_{\text{/ˌdiːkəˈmɪʃən‿ðæt‿fəˈsɪlɪti/}}
 $$
-$$ \text{and }
+$$
+\text{and }
 \underbrace{\text{it could be}}_{\text{/ɪt‿kʊd‿bi/}}
 \text{ decades before nearby residents who were }
 \underbrace{\text{forced to flee}}_{\text{/fɔrst‿tə‿fliː/}}
@@ -919,11 +932,13 @@ $$
 \underbrace{\text{I was lifting}}_{\text{/aɪ‿wəz‿ˈlɪftɪŋ/}}\text{, you know, chairs out of the way, broken glass, uh,}
 $$
 
-$$ \text{other sanitary items }
+$$
+\text{other sanitary items }
 \underbrace{\text{I don't want to get into}}_{\text{/aɪ‿doʊnt‿ˈwɑnə‿gɛt‿ˈɪntu/}}\text{,}
 $$
 
-$$ \text{but um it was, uh, horrific }
+$$
+\text{but um it was, uh, horrific }
 \underbrace{\text{to say the least}}_{\text{/tə‿seɪ‿ðə‿liːst/}}\text{.}
 $$
 
@@ -955,7 +970,8 @@ $$
 \underbrace{\text{It's great. It's um, been a little bit nerve-wracking}}_{\text{/ɪts‿greɪt‿ɪts‿əm‿bɪn‿ə‿ˈlɪɾl‿bɪt‿ˈnɜrv‿rækɪŋ/}}
 $$
 
-$$ \text{um, and }
+$$
+\text{um, and }
 \underbrace{\text{it's been a long process to get here}}_{\text{/ɪts‿bɪn‿ə‿lɔːŋ‿ˈprɑsɛs‿tə‿gɛt‿hɪr/}}\text{.}
 $$
 
@@ -973,11 +989,13 @@ $$
 \underbrace{\text{bound for Thailand}}_{\text{/baʊnd‿fər‿ˈtaɪlænd/}}\text{,}
 $$
 
-$$ \text{but the boat was }
+$$
+\text{but the boat was }
 \underbrace{\text{intercepted by pirates}}_{\text{/ˌɪntərˈsɛptɪd‿baɪ‿ˈpaɪrəts/}}\text{.}
 $$
 
-$$ \text{After years of trying, the father }
+$$
+\text{After years of trying, the father }
 \underbrace{\text{located his son}}_{\text{/ˈloʊkeɪtɪd‿ɪz‿sʌn/}}
 \text{ in Thailand.}
 $$
@@ -996,7 +1014,8 @@ $$
 \text{ along the busy Pennsylvania Turnpike.}
 $$
 
-$$ \text{A leaking valve on a tanker spread driveway sealant across a 40-mile stretch of the eastbound side.}
+$$
+\text{A leaking valve on a tanker spread driveway sealant across a 40-mile stretch of the eastbound side.}
 $$
 
 
@@ -1016,7 +1035,8 @@ $$
 \underbrace{\text{lives up to its name}}_{\text{/lɪvz‿ʌp‿tə‿ɪts‿neɪm/}}\text{.}
 $$
 
-$$ \text{Since it started, }
+$$
+\text{Since it started, }
 \underbrace{\text{there have been}}_{\text{/ðər‿əv‿bɪn/}}
 \text{ just 11 chord changes and the }
 \underbrace{\text{next one isn't scheduled}}_{\text{/nɛkst‿wʌn‿ˈɪzənt‿ˈskɛdʒuːld/}}
@@ -1038,7 +1058,8 @@ $$
 \text{ Sunday night.}
 $$
 
-$$ \text{More than 60 }
+$$
+\text{More than 60 }
 \underbrace{\text{bunnies}}_{\text{/ˈbʌniz/}}
 \text{ were scattered on the shoulder.}
 $$
@@ -1080,12 +1101,14 @@ $$
 \text{ others from Montana to Indiana to pay off the bills of complete strangers}
 $$
 
-$$ \text{in these days before Christmas. Holiday shoppers }
+$$
+\text{in these days before Christmas. Holiday shoppers }
 \underbrace{\text{who've heard}}_{\text{/huːv‿hɜrd/}}
 \text{ about the layaway Santas,}
 $$
 
-$$ \text{say the sweeping acts of kindness have }
+$$
+\text{say the sweeping acts of kindness have }
 \underbrace{\text{restored their faith in people.}}_{\text{/rɪˈstɔrd‿ðer‿feɪθ‿ɪn‿ˈpiːpəl/}}
 $$
 
@@ -1104,16 +1127,19 @@ $$
 \text{ to his team gave a whistle!}
 $$
 
-$$ \text{And }
+$$
+\text{And }
 \underbrace{\text{away they all flew}}_{\text{/əˈweɪ‿ðeɪ‿ɔːl‿fluː/}}
 \text{ like a down of a thistle.}
 $$
 
-$$ \text{But I heard him exclaimed }
+$$
+\text{But I heard him exclaimed }
 \underbrace{\text{as he drove out of sight}}_{\text{/æz‿i‿droʊv‿aʊt‿əv‿saɪt/}}
 $$
 
-$$ \text{"Happy Christmas to all, and to all a good night!"}
+$$
+\text{"Happy Christmas to all, and to all a good night!"}
 $$
 
 
@@ -1132,13 +1158,16 @@ $$
 \underbrace{\text{psychic}}_{\text{/ˈsaɪkɪk/}}\text{,}
 $$
 
-$$ \text{G: Really?}
+$$
+\text{G: Really?}
 $$
 
-$$ \text{E: Uh-huh. We should go sometime.}
+$$
+\text{E: Uh-huh. We should go sometime.}
 $$
 
-$$ \text{G: I'd love to go. }
+$$
+\text{G: I'd love to go. }
 \underbrace{\text{Make an appointment.}}_{\text{/meɪk‿ən‿əˈpɔɪntmənt/}}
 $$
 
@@ -1158,10 +1187,12 @@ $$
 \text{ the Raymond Spinball?}
 $$
 
-$$ \text{F: Ray, I learnt to play in Korea — from Koreans.}
+$$
+\text{F: Ray, I learnt to play in Korea — from Koreans.}
 $$
 
-$$ \text{Do you think some }
+$$
+\text{Do you think some }
 \underbrace{\text{pun}k\text{ kid's gonna actually beat me?}}_{\text{/pʌŋk‿kɪdz‿ˈgɔnə‿ˈæktʃuəli‿biːt‿mi/}}
 $$
 
@@ -1191,7 +1222,8 @@ $$
 \underbrace{\text{was absolute}}_{\text{/wəz‿ˈæbsəluːt/}}\text{.}
 $$
 
-$$ \text{This }
+$$
+\text{This }
 \underbrace{\text{meant}}_{\text{/mɛnt/}}
 \text{ that he }
 \underbrace{\text{had the power}}_{\text{/hæd‿ðə‿ˈpaʊər/}}
@@ -1210,11 +1242,13 @@ $$
 \text{What people will do these days for their pets...}
 $$
 
-$$ \underbrace{\text{A wash and a blowdry}}_{\text{/ə‿wɑʃ‿ən‿ə‿ˈbloʊdraɪ/}}\text{ — }
+$$
+\underbrace{\text{A wash and a blowdry}}_{\text{/ə‿wɑʃ‿ən‿ə‿ˈbloʊdraɪ/}}\text{ — }
 \underbrace{\text{that goes without saying}}_{\text{/ðæt‿goʊz‿wɪˈðaʊt‿ˈseɪɪŋ/}}\text{.}
 $$
 
-$$ \text{But the demanding dogs now }
+$$
+\text{But the demanding dogs now }
 \underbrace{\text{wants a limo}}_{\text{/wɑnts‿ə‿ˈlɪmoʊ/}}
 \text{ along with other }
 \underbrace{\text{creature comforts}}_{\text{/ˈkriːtʃər‿ˈkʌmfərts/}}
@@ -1238,12 +1272,14 @@ $$
 \text{ the murder case,}
 $$
 
-$$ \text{and police are keeping }
+$$
+\text{and police are keeping }
 \underbrace{\text{many details confidential}}_{\text{/ˈmɛni‿dɪˈteɪlz‿ˌkɑnfɪˈdɛnʃəl/}}
 \text{ as they try to identify the victim}
 $$
 
-$$ \text{and figure out exactly what happened to her.}
+$$
+\text{and figure out exactly what happened to her.}
 $$
 
 
@@ -1273,7 +1309,8 @@ $$
 \underbrace{\text{And why do you wanna go there?}}_{\text{/ənd‿waɪ‿də‿jə‿ˈwɑnə‿goʊ‿ðer/}}
 $$
 
-$$ \text{I know it's had a bad press recently but it's the place }
+$$
+\text{I know it's had a bad press recently but it's the place }
 \underbrace{\text{that's taken my fancy.}}_{\text{/ðæts‿ˈteɪkən‿maɪ‿ˈfænsi/}}
 $$
 
