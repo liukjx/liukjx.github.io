@@ -22,8 +22,10 @@ if (!publicDir) {
 let blockCounter = 0;
 
 function processHtml(filePath, html) {
-  // Match ```threejs code blocks rendered as <pre><code class="language-threejs">...</code></pre>
-  const regex = /<pre[^>]*><code[^>]*class="[^"]*\blanguage-threejs\b[^"]*"[^>]*>([\s\S]*?)<\/code><\/pre>/g;
+  // Match ```threejs code blocks in multiple formats:
+  // 1. Shiki: <figure>...<pre data-language="threejs"><code data-language="threejs">...</code></pre></figure>
+  // 2. Prism:  <pre><code class="language-threejs">...</code></pre>
+  const regex = /(?:<figure[^>]*>)?\s*<pre[^>]*(?:data-language="threejs"|class="[^"]*\blanguage-threejs\b[^"]*")[^>]*>\s*<code[^>]*>([\s\S]*?)<\/code>\s*<\/pre>\s*(?:<\/figure>)?/g;
 
   return html.replace(regex, (match, encodedCode) => {
     blockCounter++;
