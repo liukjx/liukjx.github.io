@@ -435,3 +435,85 @@ animate();
   <text class="node-text" x="420" y="177">节点 D</text>
 </svg>
 
+---
+
+## 🎯 Anime.js 动画测试
+
+> Anime.js 是纯 JS 的开源动画库（MIT），写代码就能实现各种动效。
+
+### 简单弹性动画
+
+```anime-box
+targets:
+  #a1 100px 100px #ff6b6b  弹
+  #a2 100px 100px #4ecdc4  性
+  #a3 100px 100px #f9ca24  动
+  #a4 100px 100px #a29bfe  画
+animation:
+  translateY: [0, -30]
+  rotate: [0, 360]
+  duration: 1200
+  delay: anime.stagger(150)
+  direction: alternate
+  loop: true
+  easing: 'easeInOutQuad'
+```
+
+### 描边动画（写字效果）
+
+```anime-line
+paths:
+  - M 40 200 L 100 40 L 160 200
+  - M 180 200 L 240 40 L 300 200
+  - M 320 200 L 360 40 L 400 200
+  - M 80 140 L 220 140
+  - M 240 140 L 380 140
+color: #4ecdc4
+strokeWidth: 4
+duration: 2500
+```
+
+### 网格扩散（Stagger）
+
+```anime-stagger
+count: 25
+layout: grid
+color: #ff6b6b
+animation:
+  scale: [0, 1]
+  rotate: [0, 360]
+  borderRadius: ['50%', '20%']
+  delay: anime.stagger(60)
+  duration: 800
+  easing: 'easeOutElastic(1, .5)'
+  loop: true
+  direction: alternate
+```
+
+### 自定义 Anime.js 动画
+
+```anime
+// 创建浮动小球
+var container = document.getElementById('anime-container-9');
+container.style.position = 'relative';
+container.style.height = '120px';
+container.style.background = '#1a1a2e';
+container.style.borderRadius = '12px';
+container.style.overflow = 'hidden';
+
+var ball = document.createElement('div');
+ball.style.cssText = 'position:absolute;left:50%;top:50%;width:40px;height:40px;background:radial-gradient(circle at 35% 35%, #4ecdc4, #0abde3);border-radius:50%;transform:translate(-50%,-50%);';
+container.appendChild(ball);
+
+anime({
+  targets: ball,
+  translateX: [-100, 100],
+  translateY: [-30, 30],
+  scale: [1, 1.5, 1],
+  duration: 2000,
+  direction: 'alternate',
+  loop: true,
+  easing: 'easeInOutSine'
+});
+```
+

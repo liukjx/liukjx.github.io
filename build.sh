@@ -23,6 +23,9 @@ node "$SCRIPT_DIR/inject-abcjs.js" "$BLOG_DIR/quartz/public"
 echo "=== Step 5: Process Three.js code blocks ==="
 node "$SCRIPT_DIR/process-threejs.js" "$BLOG_DIR/quartz/public"
 
+echo "=== Step 6: Process Anime.js animations ==="
+node "$SCRIPT_DIR/process-animejs.js" "$BLOG_DIR/quartz/public"
+
 echo "=== Build complete! ==="
 echo "Output: $BLOG_DIR/quartz/public"
 echo ""
