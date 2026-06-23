@@ -8,51 +8,46 @@
  *
  * Markdown syntax:
  *
- *   Direct code (raw Anime.js):
+ *   Raw Anime.js code (use `container` variable for the wrapper div):
  *   ```anime
- *   anime({
- *     targets: '.my-el',
- *     translateX: 250,
- *     duration: 1500,
- *     easing: 'easeInOutQuad'
- *   });
+ *   var ball = document.createElement('div');
+ *   ball.style.cssText = 'width:40px;height:40px;background:#ff6b6b;border-radius:50%;';
+ *   container.appendChild(ball);
+ *   anime({ targets: ball, translateX: 200, duration: 1500 });
  *   ```
  *
- *   With inline elements (creates a container + target elements):
+ *   Inline target boxes:
  *   ```anime-box
- *   // targets block will be rendered as divs inside the container
  *   targets:
- *     #box1 200px 100px #ff6b6b  Left
- *     #box2 200px 100px #4ecdc4  Right
+ *     #a1 100px 100px #ff6b6b  弹
+ *     #a2 100px 100px #4ecdc4  性
  *   animation:
- *     targets: '#box1, #box2'
- *     translateX: 250
+ *     translateY: [0, -30]
+ *     rotate: [0, 360]
  *     duration: 1200
+ *     delay: anime.stagger(150)
  *     direction: alternate
  *     loop: true
- *     easing: 'easeInOutQuad'
  *   ```
  *
  *   SVG line draw:
  *   ```anime-line
- *   // Draws a line/path segment by segment
  *   paths:
- *     - M 50 200 L 120 150 L 190 80 L 260 110 L 330 60 L 400 80
- *   color: #ff6b6b
- *   strokeWidth: 3
- *   duration: 2000
+ *     - M 50 200 L 100 40 L 150 200
+ *   color: #4ecdc4
+ *   strokeWidth: 4
+ *   duration: 2500
  *   ```
  *
- *   Stagger / list animation:
+ *   Stagger grid:
  *   ```anime-stagger
- *   // Creates a grid of items and staggers them
- *   count: 20
- *   layout: row            // row | grid
+ *   count: 25
+ *   layout: grid
  *   color: #ff6b6b
  *   animation:
  *     scale: [0, 1]
  *     rotate: [0, 360]
- *     delay: anime.stagger(80)
+ *     delay: anime.stagger(60)
  *     duration: 800
  *     easing: 'easeOutElastic(1, .5)'
  *   ```
@@ -98,19 +93,28 @@ function processHtml(filePath, html) {
 
 function renderRawCode(cid, code) {
   const safeCode = code.replace(/<\/script>/gi, '<\\/script>');
+  const funcName = 'initAnime_' + cid.replace(/-/g, '_');
 
   return [
     `<div id="${cid}" style="position:relative;min-height:60px;margin:0.8em 0;"></div>`,
-    `<script src="${ANIME_CDN}"></script>`,
     `<script>`,
     `(function(){`,
     `  var el = document.getElementById('${cid}');`,
     `  if (!el || el.dataset.animeInit) return;`,
     `  el.dataset.animeInit = '1';`,
-    `  try {`,
-    `    ${safeCode}`,
-    `  } catch(e) {`,
-    `    el.innerHTML = '<pre style="color:#ff6b6b;padding:0.5em;font-size:13px;">Anime.js error: ' + e.message + '</pre>';`,
+    `  if (typeof anime === 'undefined') {`,
+    `    var s = document.createElement('script');`,
+    `    s.src = '${ANIME_CDN}';`,
+    `    s.onload = function() {`,
+    `      var container = el;`,
+    `      try { ${safeCode} }`,
+    `      catch(e) { el.innerHTML = '<pre style=\\"color:#ff6b6b;padding:0.5em;font-size:13px;\\">Anime.js error: ' + e.message + '</pre>'; }`,
+    `    };`,
+    `    document.head.appendChild(s);`,
+    `  } else {`,
+    `    var container = el;`,
+    `    try { ${safeCode} }`,
+    `    catch(e) { el.innerHTML = '<pre style=\\"color:#ff6b6b;padding:0.5em;font-size:13px;\\">Anime.js error: ' + e.message + '</pre>'; }`,
     `  }`,
     `})();`,
     `</script>`
@@ -118,7 +122,6 @@ function renderRawCode(cid, code) {
 }
 
 function renderBoxMode(cid, content) {
-  // Parse targets and animation sections
   const lines = content.split('\n').map(l => l.trim()).filter(l => l);
 
   const targets = [];
@@ -134,40 +137,43 @@ function renderBoxMode(cid, content) {
     if (inAnim) animLines.push(l);
   }
 
-  // Build target HTML
   let targetHtml = '';
   const targetSelectors = [];
   targets.forEach((t, i) => {
     if (!t) return;
     targetSelectors.push(`#${t.id}`);
-    targetHtml += `<div id="${t.id}" style="display:inline-flex;align-items:center;justify-content:center;width:${t.w};height:${t.h};background:${t.color};color:#fff;border-radius:8px;margin:4px;font-size:13px;font-weight:bold;opacity:0;">${t.label || ''}</div>`;
+    targetHtml += `<div id="${t.id}" style="display:inline-flex;align-items:center;justify-content:center;width:${t.w};height:${t.h};background:${t.color};color:#fff;border-radius:8px;margin:4px;font-size:13px;font-weight:bold;">${t.label || ''}</div>`;
   });
 
-  // Build animation object
   const animObj = buildAnimObject(animLines, targetSelectors.join(', '));
 
   return [
     `<div id="${cid}" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;padding:1em;background:#1a1a2e;border-radius:12px;margin:1em 0;min-height:120px;">`,
     `  ${targetHtml}`,
     `</div>`,
-    `<script src="${ANIME_CDN}"></script>`,
     `<script>`,
     `(function(){`,
     `  var c = document.getElementById('${cid}');`,
     `  if (!c || c.dataset.animeInit) return;`,
     `  c.dataset.animeInit = '1';`,
-    `  anime({`,
-    `    targets: '${escapeStr(targetSelectors.join(', '))}',`,
-    `    opacity: [0, 1],`,
-    `    ${animObj}`,
-    `  });`,
+    `  function run() {`,
+    `    anime({`,
+    `      targets: '${escapeStr(targetSelectors.join(', '))}',`,
+    `      ${animObj}`,
+    `    });`,
+    `  }`,
+    `  if (typeof anime === 'undefined') {`,
+    `    var s = document.createElement('script');`,
+    `    s.src = '${ANIME_CDN}';`,
+    `    s.onload = run;`,
+    `    document.head.appendChild(s);`,
+    `  } else { run(); }`,
     `})();`,
     `</script>`
   ].join('\n');
 }
 
 function renderLineMode(cid, content) {
-  // Parse paths and options
   const lines = content.split('\n').map(l => l.trim()).filter(l => l);
   let paths = [];
   let color = '#ff6b6b';
@@ -178,8 +184,8 @@ function renderLineMode(cid, content) {
   for (const l of lines) {
     if (l.startsWith('paths:')) { inPaths = true; continue; }
     if (l.startsWith('color:')) { color = l.split(':')[1].trim(); inPaths = false; continue; }
-    if (l.startsWith('strokeWidth:')) { strokeWidth = l.split(':')[1].trim(); inPaths = false; continue; }
-    if (l.startsWith('duration:')) { duration = l.split(':')[1].trim(); inPaths = false; continue; }
+    if (l.startsWith('strokeWidth:')) { strokeWidth = parseInt(l.split(':')[1], 10) || 3; inPaths = false; continue; }
+    if (l.startsWith('duration:')) { duration = parseInt(l.split(':')[1], 10) || 2000; inPaths = false; continue; }
     if (inPaths && l.startsWith('-')) { paths.push(l.replace(/^-\s*/, '')); }
   }
 
@@ -187,34 +193,38 @@ function renderLineMode(cid, content) {
 
   const pathD = paths.join(' ');
 
-  // Create SVG with a single path for draw animation
   return [
     `<div id="${cid}" style="position:relative;width:100%;max-width:500px;height:250px;background:#1a1a2e;border-radius:12px;margin:1em auto;overflow:hidden;">`,
     `  <svg viewBox="0 0 500 250" style="width:100%;height:100%;">`,
     `    <path id="${cid}-path" d="${pathD}" fill="none" stroke="${color}" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round"/>`,
     `  </svg>`,
     `</div>`,
-    `<script src="${ANIME_CDN}"></script>`,
     `<script>`,
     `(function(){`,
     `  var c = document.getElementById('${cid}');`,
     `  if (!c || c.dataset.animeInit) return;`,
     `  c.dataset.animeInit = '1';`,
-    `  anime({`,
-    `    targets: '#${cid}-path',`,
-    `    strokeDashoffset: [anime.setDashoffset, 0],`,
-    `    duration: ${duration},`,
-    `    easing: 'easeInOutQuad',`,
-    `    loop: true,`,
-    `    direction: 'normal'`,
-    `  });`,
+    `  function run() {`,
+    `    anime({`,
+    `      targets: '#${cid}-path',`,
+    `      strokeDashoffset: [anime.setDashoffset, 0],`,
+    `      duration: ${duration},`,
+    `      easing: 'easeInOutQuad',`,
+    `      loop: true`,
+    `    });`,
+    `  }`,
+    `  if (typeof anime === 'undefined') {`,
+    `    var s = document.createElement('script');`,
+    `    s.src = '${ANIME_CDN}';`,
+    `    s.onload = run;`,
+    `    document.head.appendChild(s);`,
+    `  } else { run(); }`,
     `})();`,
     `</script>`
   ].join('\n');
 }
 
 function renderStaggerMode(cid, content) {
-  // Parse stagger config
   const lines = content.split('\n').map(l => l.trim()).filter(l => l);
   let count = 20;
   let layout = 'row';
@@ -230,44 +240,47 @@ function renderStaggerMode(cid, content) {
     if (inAnim) animLines.push(l);
   }
 
-  // Build grid of boxes
-  let itemsHtml = '';
   const cols = layout === 'row' ? count : Math.ceil(Math.sqrt(count));
-  const style = layout === 'row'
-    ? 'display:inline-flex;flex-wrap:nowrap;gap:6px;'
-    : 'display:grid;grid-template-columns:repeat(' + cols + ',1fr);gap:6px;';
+  const containerStyle = layout === 'row'
+    ? 'display:flex;flex-wrap:wrap;gap:6px;padding:1em;background:#1a1a2e;border-radius:12px;margin:1em 0;justify-content:center;'
+    : 'display:grid;grid-template-columns:repeat(' + cols + ',1fr);gap:6px;padding:1em;background:#1a1a2e;border-radius:12px;margin:1em 0;';
 
+  let itemsHtml = '';
   for (let i = 0; i < count; i++) {
-    itemsHtml += `<div class="${cid}-item" style="width:30px;height:30px;background:${color};border-radius:4px;opacity:0;transform:scale(0);"></div>`;
+    itemsHtml += `<div class="${cid}-item" style="width:30px;height:30px;background:${color};border-radius:4px;"></div>`;
   }
 
   const animObj = buildAnimObject(animLines, `.${cid}-item`);
 
   return [
-    `<div id="${cid}" style="${style}padding:1em;background:#1a1a2e;border-radius:12px;margin:1em 0;justify-content:center;">`,
+    `<div id="${cid}" style="${containerStyle}">`,
     `  ${itemsHtml}`,
     `</div>`,
-    `<script src="${ANIME_CDN}"></script>`,
     `<script>`,
     `(function(){`,
     `  var c = document.getElementById('${cid}');`,
     `  if (!c || c.dataset.animeInit) return;`,
     `  c.dataset.animeInit = '1';`,
-    `  anime({`,
-    `    targets: '.${cid}-item',`,
-    `    opacity: [0, 1],`,
-    `    scale: [0, 1],`,
-    `    ${animObj}`,
-    `  });`,
+    `  function run() {`,
+    `    anime({`,
+    `      targets: '.${cid}-item',`,
+    `      ${animObj}`,
+    `    });`,
+    `  }`,
+    `  if (typeof anime === 'undefined') {`,
+    `    var s = document.createElement('script');`,
+    `    s.src = '${ANIME_CDN}';`,
+    `    s.onload = run;`,
+    `    document.head.appendChild(s);`,
+    `  } else { run(); }`,
     `})();`,
     `</script>`
   ].join('\n');
 }
 
 function parseTargetLine(line) {
-  // #id width height color label
   const parts = line.split(/\s+/);
-  if (parts.length < 1) return null;
+  if (parts.length < 1 || !parts[0].startsWith('#')) return null;
   return {
     id: parts[0].replace(/^#/, ''),
     w: parts[1] || '80px',
@@ -279,10 +292,9 @@ function parseTargetLine(line) {
 
 function buildAnimObject(lines, targetSelector) {
   if (!lines.length) return '';
-  // Lines are like: key: value
   const props = lines.map(l => {
     const idx = l.indexOf(':');
-    if (idx === -1) return l;  // raw expression
+    if (idx === -1) return l;
     const key = l.substring(0, idx).trim();
     const val = l.substring(idx + 1).trim();
     return `${key}: ${val}`;

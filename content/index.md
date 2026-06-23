@@ -493,13 +493,8 @@ animation:
 ### 自定义 Anime.js 动画
 
 ```anime
-// 创建浮动小球
-var container = document.getElementById('anime-container-9');
-container.style.position = 'relative';
-container.style.height = '120px';
-container.style.background = '#1a1a2e';
-container.style.borderRadius = '12px';
-container.style.overflow = 'hidden';
+// 使用 container 变量（自动传入，无需自己查找）
+container.style.minHeight = '120px';
 
 var ball = document.createElement('div');
 ball.style.cssText = 'position:absolute;left:50%;top:50%;width:40px;height:40px;background:radial-gradient(circle at 35% 35%, #4ecdc4, #0abde3);border-radius:50%;transform:translate(-50%,-50%);';
