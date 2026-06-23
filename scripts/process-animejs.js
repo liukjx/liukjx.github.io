@@ -314,7 +314,7 @@ function buildAnimObject(lines, targetSelector) {
     return `${key}: ${val}`;
   }).join(',\n    ');
   return props;
-}}
+}
 
 function escapeStr(s) {
   return s.replace(/'/g, "\\'").replace(/\n/g, '\\n');
