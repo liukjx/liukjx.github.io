@@ -300,10 +300,21 @@ function buildAnimObject(lines, targetSelector) {
     if (idx === -1) return l;
     const key = l.substring(0, idx).trim();
     const val = l.substring(idx + 1).trim();
+    // Auto-quote string values
+    if (val.startsWith("'") || val.startsWith('"')) {
+      // already quoted
+    } else if (/^-?[\d.]+$/.test(val) || val === 'true' || val === 'false' || val === 'null') {
+      // number or boolean or null
+    } else if (val.startsWith('[') || val.startsWith('{') || val.startsWith('anime.') || val.startsWith('function')) {
+      // array, object, anime expression, or function
+    } else {
+      // wrap in single quotes
+      return `${key}: '${val}'`;
+    }
     return `${key}: ${val}`;
   }).join(',\n    ');
   return props;
-}
+}}
 
 function escapeStr(s) {
   return s.replace(/'/g, "\\'").replace(/\n/g, '\\n');
