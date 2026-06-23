@@ -66,6 +66,39 @@ if (!publicDir) {
 
 let blockCounter = 0;
 
+function animeLoaderScript() {
+  return [
+    `  function loadAnime(cb, onError) {`,
+    `    if (typeof anime !== 'undefined') { cb(); return; }`,
+    `    window.__animeReadyCallbacks = window.__animeReadyCallbacks || [];`,
+    `    window.__animeReadyCallbacks.push(cb);`,
+    `    if (window.__animeLoading) return;`,
+    `    window.__animeLoading = true;`,
+    `    var s = document.querySelector('script[data-animejs-loader="true"]');`,
+    `    if (!s) {`,
+    `      s = document.createElement('script');`,
+    `      s.src = '${ANIME_CDN}';`,
+    `      s.async = true;`,
+    `      s.dataset.animejsLoader = 'true';`,
+    `      document.head.appendChild(s);`,
+    `    }`,
+    `    s.onload = function() {`,
+    `      window.__animeLoading = false;`,
+    `      var callbacks = window.__animeReadyCallbacks || [];`,
+    `      window.__animeReadyCallbacks = [];`,
+    `      callbacks.forEach(function(fn) { fn(); });`,
+    `    };`,
+    `    s.onerror = function() {`,
+    `      window.__animeLoading = false;`,
+    `      var callbacks = window.__animeReadyCallbacks || [];`,
+    `      window.__animeReadyCallbacks = [];`,
+    `      if (onError) onError();`,
+    `      callbacks.forEach(function(fn) { fn(); });`,
+    `    };`,
+    `  }`
+  ].join('\n');
+}
+
 function processHtml(filePath, html) {
   const regex = /(?:<figure[^>]*>)?\s*<pre[^>]*(?:data-language="(anime(?:-box|-line|-stagger)?)"|class="[^"]*\blanguage-(anime(?:-box|-line|-stagger)?)\b[^"]*")[^>]*>\s*<code[^>]*>([\s\S]*?)<\/code>\s*<\/pre>\s*(?:<\/figure>)?/g;
 
@@ -98,30 +131,32 @@ function renderRawCode(cid, code) {
   return [
     `<div id="${cid}" style="position:relative;min-height:60px;margin:0.8em 0;"></div>`,
     `<script>`,
-    `(function(){`,
+    `function ${funcName}(){`,
     `  var el = document.getElementById('${cid}');`,
     `  if (!el || el.dataset.animeInit) return;`,
     `  el.dataset.animeInit = '1';`,
-    `  if (typeof anime === 'undefined') {`,
-    `    var s = document.createElement('script');`,
-    `    s.src = '${ANIME_CDN}';`,
-    `    s.onload = function() {`,
-    `      var container = el;`,
-    `      try { ${safeCode} }`,
-    `      catch(e) { el.innerHTML = '<pre style=\\"color:#ff6b6b;padding:0.5em;font-size:13px;\\">Anime.js error: ' + e.message + '</pre>'; }`,
-    `    };`,
-    `    document.head.appendChild(s);`,
-    `  } else {`,
+    animeLoaderScript(),
+    `  function run() {`,
     `    var container = el;`,
     `    try { ${safeCode} }`,
     `    catch(e) { el.innerHTML = '<pre style=\\"color:#ff6b6b;padding:0.5em;font-size:13px;\\">Anime.js error: ' + e.message + '</pre>'; }`,
     `  }`,
-    `})();`,
+    `  loadAnime(run, function() {`,
+    `    el.innerHTML = '<pre style=\\"color:#ff6b6b;padding:0.5em;font-size:13px;\\">Anime.js failed to load</pre>';`,
+    `  });`,
+    `}`,
+    `if (document.readyState === 'loading') {`,
+    `  document.addEventListener('DOMContentLoaded', ${funcName});`,
+    `} else {`,
+    `  ${funcName}();`,
+    `}`,
+    `document.addEventListener('nav', ${funcName});`,
     `</script>`
   ].join('\n');
 }
 
 function renderBoxMode(cid, content) {
+  const funcName = 'initAnime_' + cid.replace(/-/g, '_');
   const lines = content.split('\n').map(l => l.trim()).filter(l => l);
 
   const targets = [];
@@ -152,28 +187,31 @@ function renderBoxMode(cid, content) {
     `  ${targetHtml}`,
     `</div>`,
     `<script>`,
-    `(function(){`,
+    `function ${funcName}(){`,
     `  var c = document.getElementById('${cid}');`,
     `  if (!c || c.dataset.animeInit) return;`,
     `  c.dataset.animeInit = '1';`,
+    animeLoaderScript(),
     `  function run() {`,
     `    anime({`,
-    `      targets: '${escapeStr(targetSelectors.join(', '))}',`,
+    `      targets: c.querySelectorAll('${escapeStr(targetSelectors.join(', '))}'),`,
     `      ${animObj}`,
     `    });`,
     `  }`,
-    `  if (typeof anime === 'undefined') {`,
-    `    var s = document.createElement('script');`,
-    `    s.src = '${ANIME_CDN}';`,
-    `    s.onload = run;`,
-    `    document.head.appendChild(s);`,
-    `  } else { run(); }`,
-    `})();`,
+    `  loadAnime(run);`,
+    `}`,
+    `if (document.readyState === 'loading') {`,
+    `  document.addEventListener('DOMContentLoaded', ${funcName});`,
+    `} else {`,
+    `  ${funcName}();`,
+    `}`,
+    `document.addEventListener('nav', ${funcName});`,
     `</script>`
   ].join('\n');
 }
 
 function renderLineMode(cid, content) {
+  const funcName = 'initAnime_' + cid.replace(/-/g, '_');
   const lines = content.split('\n').map(l => l.trim()).filter(l => l);
   let paths = [];
   let color = '#ff6b6b';
@@ -200,12 +238,14 @@ function renderLineMode(cid, content) {
     `  </svg>`,
     `</div>`,
     `<script>`,
-    `(function(){`,
+    `function ${funcName}(){`,
     `  var c = document.getElementById('${cid}');`,
     `  if (!c || c.dataset.animeInit) return;`,
     `  c.dataset.animeInit = '1';`,
     `  var path = document.getElementById('${cid}-path');`,
+    animeLoaderScript(),
     `  function run() {`,
+    `    if (!path) return;`,
     `    var len = path.getTotalLength();`,
     `    path.style.strokeDasharray = len;`,
     `    anime({`,
@@ -216,18 +256,20 @@ function renderLineMode(cid, content) {
     `      loop: true`,
     `    });`,
     `  }`,
-    `  if (typeof anime === 'undefined') {`,
-    `    var s = document.createElement('script');`,
-    `    s.src = '${ANIME_CDN}';`,
-    `    s.onload = run;`,
-    `    document.head.appendChild(s);`,
-    `  } else { run(); }`,
-    `})();`,
+    `  loadAnime(run);`,
+    `}`,
+    `if (document.readyState === 'loading') {`,
+    `  document.addEventListener('DOMContentLoaded', ${funcName});`,
+    `} else {`,
+    `  ${funcName}();`,
+    `}`,
+    `document.addEventListener('nav', ${funcName});`,
     `</script>`
   ].join('\n');
 }
 
 function renderStaggerMode(cid, content) {
+  const funcName = 'initAnime_' + cid.replace(/-/g, '_');
   const lines = content.split('\n').map(l => l.trim()).filter(l => l);
   let count = 20;
   let layout = 'row';
@@ -260,23 +302,25 @@ function renderStaggerMode(cid, content) {
     `  ${itemsHtml}`,
     `</div>`,
     `<script>`,
-    `(function(){`,
+    `function ${funcName}(){`,
     `  var c = document.getElementById('${cid}');`,
     `  if (!c || c.dataset.animeInit) return;`,
     `  c.dataset.animeInit = '1';`,
+    animeLoaderScript(),
     `  function run() {`,
     `    anime({`,
-    `      targets: '.${cid}-item',`,
+    `      targets: c.querySelectorAll('.${cid}-item'),`,
     `      ${animObj}`,
     `    });`,
     `  }`,
-    `  if (typeof anime === 'undefined') {`,
-    `    var s = document.createElement('script');`,
-    `    s.src = '${ANIME_CDN}';`,
-    `    s.onload = run;`,
-    `    document.head.appendChild(s);`,
-    `  } else { run(); }`,
-    `})();`,
+    `  loadAnime(run);`,
+    `}`,
+    `if (document.readyState === 'loading') {`,
+    `  document.addEventListener('DOMContentLoaded', ${funcName});`,
+    `} else {`,
+    `  ${funcName}();`,
+    `}`,
+    `document.addEventListener('nav', ${funcName});`,
     `</script>`
   ].join('\n');
 }
