@@ -435,35 +435,3 @@ animate();
   <text class="node-text" x="420" y="177">节点 D</text>
 </svg>
 
----
-
-## 🎬 Rive 动画测试
-
-> Rive 动画渲染已集成！需要在 `static/rive/` 目录下放置 `.riv` 文件。
-> 以下示例需要有对应的动画文件才能显示。
-
-### 交互式状态机
-
-```rive state_machine=State Machine 1 src=/rive/robot.riv
-::inputs::
-clickButton.fire()
-```
-
-### 循环播放动画
-
-```rive-loop src=/rive/walk.riv animation=walk
-```
-
-### 背景静默动画
-
-```rive-silent src=/rive/particles.riv animation=particle_loop bg=#0a0a1a
-```
-
----
-
-### 💡 怎么获取 Rive 动画文件
-
-1. 用 [Rive Editor](https://rive.app) 在线创作，导出 `.riv`
-2. 或者下载社区分享的免费 `.riv` 文件
-3. 放到 `static/rive/` 目录下，重新构建即可
-
