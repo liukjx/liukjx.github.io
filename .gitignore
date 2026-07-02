@@ -10,3 +10,5 @@ CLAUDE.md
 .idea/
 reasonix.toml
 .agents/
+REASONIX.md
+.reasonix/
