@@ -1,0 +1,43 @@
+/* Game Design Course - Obsidian Styling */
+/* Improves readability for game design study notes */
+
+/* Callout customization */
+.callout {
+    --callout-radius: 8px;
+}
+
+/* Mermaid diagram centering */
+.mermaid {
+    text-align: center;
+    margin: 1em 0;
+}
+
+/* Better table readability */
+.markdown-preview-view table {
+    font-size: 0.9em;
+    width: 100%;
+}
+
+/* Details block styling */
+details {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background: var(--background-secondary);
+    border-radius: 8px;
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--text-accent);
+}
+
+/* Highlight key terms */
+strong {
+    color: var(--text-accent-hover);
+}
+
+/* Code blocks for game design specs */
+code {
+    font-size: 0.85em;
+}
