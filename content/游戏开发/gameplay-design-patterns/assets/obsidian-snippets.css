@@ -1,0 +1,24 @@
+/* Gameplay Design Patterns Course - Obsidian Snippets */
+/* Drop into .obsidian/snippets/ and enable in Appearance settings. */
+
+/* Course callout styling */
+.callout[data-callout="pattern"] {
+  --callout-color: 99, 102, 241;
+  --callout-icon: layers;
+}
+
+.callout[data-callout="game"] {
+  --callout-color: 239, 68, 68;
+  --callout-icon: gamepad-2;
+}
+
+/* Phase headings */
+h2:is(.phase-1, [id*="phase-1"]) { border-left: 4px solid #6366f1; padding-left: 0.75rem; }
+h2:is(.phase-2, [id*="phase-2"]) { border-left: 4px solid #22c55e; padding-left: 0.75rem; }
+h2:is(.phase-3, [id*="phase-3"]) { border-left: 4px solid #f59e0b; padding-left: 0.75rem; }
+h2:is(.phase-4, [id*="phase-4"]) { border-left: 4px solid #ec4899; padding-left: 0.75rem; }
+h2:is(.phase-5, [id*="phase-5"]) { border-left: 4px solid #14b8a6; padding-left: 0.75rem; }
+h2:is(.phase-6, [id*="phase-6"]) { border-left: 4px solid #8b5cf6; padding-left: 0.75rem; }
+
+/* Mermaid diagram sizing */
+.mermaid { max-width: 100%; overflow-x: auto; }
