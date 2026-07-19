@@ -1,6 +1,6 @@
 ---
 title: "第10课：Spatial Sense — 空间感知"
-description: "Spatial Sense 模块是 PICO SDK 中让应用"看见"现实世界的桥梁。它包括空间锚点、平面检测、网格扫描、键盘检测等功能，是构建 MR 混合现实应用的基石。"
+description: "Spatial Sense 模块是 PICO SDK 中让应用「看见」现实世界的桥梁。它包括空间锚点、平面检测、网格扫描、键盘检测等功能，是构建 MR 混合现实应用的基石。"
 ---
 
 Spatial Sense 模块是 PICO SDK 中让应用"看见"现实世界的桥梁。它包括空间锚点、平面检测、网格扫描、键盘检测等功能，是构建 MR 混合现实应用的基石。
