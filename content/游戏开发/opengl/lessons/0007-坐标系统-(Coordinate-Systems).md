@@ -1,5 +1,5 @@
 ---
-title: 第 7 课：坐标系统 (Coordinate Systems) — 3D 世界的摄像机
+title: "第07课：坐标系统 (Coordinate Systems) — 3D 世界的摄像机"
 description: 上一课我们用变换矩阵让物体旋转起来，但画面仍然是"扁平的"——看起来像是 2D 纸片在旋转。这一课，我们将真正进入 3D 世界：学习如何将 3D 场景通过一系列
 tags: [opengl, 图形学, 坐标系统, 摄像机]
 date: 2025-01-01

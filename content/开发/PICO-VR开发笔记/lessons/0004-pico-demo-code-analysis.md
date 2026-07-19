@@ -1,5 +1,5 @@
 ---
-title: 第4课：深入解读 PICO Demo 中的 Kotlin 代码
+title: "第04课：深入解读 PICO Demo 中的 Kotlin 代码"
 description: 综合运用前3课所学知识，深入分析 PICO 官方 8 个 Demo 项目的代码模式，涵盖扩展函数、密封类、单例模式等核心 Kotlin 特性在 VR 开发中的实际应用。
 ---
 

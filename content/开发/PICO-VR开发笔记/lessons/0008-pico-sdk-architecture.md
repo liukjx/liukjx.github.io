@@ -1,5 +1,5 @@
 ---
-title: "第8课：PICO Spatial SDK 总体架构"
+title: "第08课：PICO Spatial SDK 总体架构"
 description: >
   这是 SDK 学习的开篇。本节课从宏观层面理解 SDK 的模块划分、依赖关系和设计哲学。学完本课后，你将清楚"什么时候该用哪个模块"以及"具体该用哪个 API"。
 ---

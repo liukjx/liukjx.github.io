@@ -1,5 +1,5 @@
 ---
-title: "补充课2：Kotlin Flow 深入"
+title: "补充课02：Kotlin Flow 深入"
 description: "探索 Kotlin Flow 的深入用法，包括 StateFlow、combine、stateIn、snapshotFlow 等操作符，以及它们在 PICO VR 开发中的应用模式。"
 ---
 

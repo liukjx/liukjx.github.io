@@ -1,5 +1,5 @@
 ---
-title: "补充课4：Android 权限系统与 PICO 空间权限"
+title: "补充课04：Android 权限系统与 PICO 空间权限"
 description: "Android 权限系统演变、运行时权限标准流程、PICO 空间权限体系以及 Android 14/15 权限新变化"
 ---
 

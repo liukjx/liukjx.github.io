@@ -1,5 +1,5 @@
 ---
-title: 第0014课：多光源 (Multiple Lights) | LearnOpenGL 中文教程
+title: "第14课：多光源 (Multiple Lights) | LearnOpenGL 中文教程"
 description: 在上一课中，我们学习了平行光、点光源和聚光灯三种光源类型。实际游戏场景中几乎不会只有一盏灯——一个房间可能有顶灯、台灯、窗外射入的阳光，还有角色的手电筒。本课将
 tags: [opengl, 图形学, 光照]
 date: 2025-01-01

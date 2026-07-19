@@ -1,5 +1,5 @@
 ---
-title: 第0026课：HDR 与 Bloom | LearnOpenGL 中文教学
+title: "第26课：HDR 与 Bloom | LearnOpenGL 中文教学"
 description: 理解高动态范围和泛光效果的原理与实现，以及它们在商业引擎中的应用。
 tags: [opengl, 图形学, HDR, 帧缓冲, 后处理]
 date: 2025-01-01

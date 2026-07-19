@@ -1,5 +1,5 @@
 ---
-title: "第1课：Kotlin for Java Developers — 30 分钟速览"
+title: "第01课：Kotlin for Java Developers — 30 分钟速览"
 description: "你已有 5 年 Java 经验，那 Kotlin 对你来说大部分都是\"熟悉的陌生人\"。本课不讲基础语法（循环、条件、类定义这些你扫一眼就会了），而是聚焦 Java 里有但写法不同、以及 Java 里完全没有的核心概念。"
 ---
 

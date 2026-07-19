@@ -1,5 +1,5 @@
 ---
-title: 第0027课：延迟着色 (Deferred Shading) | LearnOpenGL 中文教学
+title: "第27课：延迟着色 (Deferred Shading) | LearnOpenGL 中文教学"
 description: 理解前向渲染的瓶颈、延迟渲染的核心思想以及它在现代引擎中的地位。
 tags: [opengl, 图形学, 光照]
 date: 2025-01-01

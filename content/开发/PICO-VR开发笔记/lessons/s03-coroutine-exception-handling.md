@@ -1,5 +1,5 @@
 ---
-title: "补充课3：协程异常处理与结构化并发"
+title: "补充课03：协程异常处理与结构化并发"
 description: "深入理解 Kotlin 协程的异常传播机制与结构化并发，包括 SupervisorJob、CoroutineExceptionHandler、runCatching、awaitCancellation 与 NonCancellable 等关键技术，以及它们在 PICO VR Demo 中的实际应用模式。"
 ---
 

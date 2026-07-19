@@ -1,5 +1,5 @@
 ---
-title: "第7课：Android 生命周期与 MVVM 架构"
+title: "第07课：Android 生命周期与 MVVM 架构"
 description: "这是进入 PICO SDK 之前的最后一块 Android 基础知识。理解 Android 生命周期和 MVVM 模式，你就掌握了 PICO 8 个 Demo 共同遵守的架构规范。"
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 第0002课：创建窗口 | LearnOpenGL
+title: "第02课：创建窗口 | LearnOpenGL"
 description: LearnOpenGL 系列 · 零基础图形编程
 tags: [opengl, 图形学]
 date: 2025-01-01

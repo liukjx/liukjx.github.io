@@ -1,5 +1,5 @@
 ---
-title: 第0016课：模型加载 (Model Loading) | LearnOpenGL
+title: "第16课：模型加载 (Model Loading) | LearnOpenGL"
 description: 经过光照阶段的学习，我们已经掌握了如何让物体在三维空间中呈现真实的明暗效果。但到目前为止，我们所有的几何体都是手动在代码中定义顶点数据——一个立方体、一个平面、
 tags: [opengl, 图形学]
 date: 2025-01-01

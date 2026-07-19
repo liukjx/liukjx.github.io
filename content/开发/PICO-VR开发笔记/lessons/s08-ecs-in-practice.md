@@ -1,5 +1,5 @@
 ---
-title: "补充课8：ECS 实战 — Rotation.kt 全解析"
+title: "补充课08：ECS 实战 — Rotation.kt 全解析"
 description: "通过 welcomespace 中的 Rotation.kt 学习 PICO ECS 架构的自定义 Component 和 System 实现"
 ---
 

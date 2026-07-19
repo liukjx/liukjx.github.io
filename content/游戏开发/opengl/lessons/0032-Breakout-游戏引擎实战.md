@@ -1,5 +1,5 @@
 ---
-title: 第0032课：Breakout 游戏引擎实战
+title: "第32课：Breakout 游戏引擎实战"
 description: 一个完整的 2D 游戏引擎 —— 从 OpenGL 到游戏应用的桥梁
 tags: [opengl, 图形学]
 date: 2025-01-01

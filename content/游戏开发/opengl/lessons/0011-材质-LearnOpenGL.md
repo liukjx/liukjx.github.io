@@ -1,5 +1,5 @@
 ---
-title: 第0011课：材质 | LearnOpenGL
+title: "第11课：材质 | LearnOpenGL"
 description: 在上一课中，我们使用统一的 objectColor 来定义物体的颜色。但真实世界中的物体对光的响应方式各不相同：金属会强烈反射高光且高光带颜色，塑料的高光是白色
 tags: [opengl, 图形学, 材质, 着色器]
 date: 2025-01-01

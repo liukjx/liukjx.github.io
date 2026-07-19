@@ -1,5 +1,5 @@
 ---
-title: 第0013课：光源类型 (Light Casters) | LearnOpenGL 中文教程
+title: "第13课：光源类型 (Light Casters) | LearnOpenGL 中文教程"
 description: 在上一阶段我们学习了 Phong 光照模型的基本框架。但现实世界中的光源远不止一种类型——太阳光从无限远处射来，灯泡从一点向四周发散，手电筒打出锥形光束。这一课
 tags: [opengl, 图形学, 光照, 着色器]
 date: 2025-01-01

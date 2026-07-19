@@ -1,5 +1,5 @@
 ---
-title: 第0018课：混合与面剔除 | LearnOpenGL
+title: "第18课：混合与面剔除 | LearnOpenGL"
 description: 本课涉及渲染管线中两个重要的环节：混合（Blending）控制透明物体的渲染方式，面剔除（Face Culling）通过跳过背面的片元来优化性能。两者在游戏引擎
 tags: [opengl, 图形学]
 date: 2025-01-01

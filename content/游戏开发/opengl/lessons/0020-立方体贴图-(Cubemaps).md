@@ -1,5 +1,5 @@
 ---
-title: 第0020课：立方体贴图 (Cubemaps) - LearnOpenGL
+title: "第20课：立方体贴图 (Cubemaps) - LearnOpenGL"
 description: 本课介绍立方体贴图（Cubemap），这是一种由 6 张纹理组成的特殊纹理类型，用于实现天空盒和环境映射。天空盒为 3D 场景提供无限远的背景，环境映射让物体反
 tags: [opengl, 图形学]
 date: 2025-01-01

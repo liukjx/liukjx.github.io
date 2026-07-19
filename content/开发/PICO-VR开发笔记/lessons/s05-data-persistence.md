@@ -1,5 +1,5 @@
 ---
-title: "补充课5：Android 数据持久化 — SharedPreferences 与 Room"
+title: "补充课05：Android 数据持久化 — SharedPreferences 与 Room"
 description: "介绍 Android 最常用的两种持久化方式：SharedPreferences 轻量键值对存储与 Room 结构化数据库，以及在 PICO 应用中的实践场景。"
 ---
 

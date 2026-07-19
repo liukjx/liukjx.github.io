@@ -1,5 +1,5 @@
 ---
-title: 第 5 课：纹理 (Textures) — 让画面拥有细节
+title: "第05课：纹理 (Textures) — 让画面拥有细节"
 description: 将二维图像贴到三维几何体表面，从"色块"到"真实物体"的跨越。
 tags: [opengl, 图形学, 纹理, 坐标系统, 材质]
 date: 2025-01-01

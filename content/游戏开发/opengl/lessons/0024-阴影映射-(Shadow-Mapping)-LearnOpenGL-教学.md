@@ -1,5 +1,5 @@
 ---
-title: 第0024课：阴影映射 (Shadow Mapping) | LearnOpenGL 教学
+title: "第24课：阴影映射 (Shadow Mapping) | LearnOpenGL 教学"
 description: 阴影是渲染中最重要的深度线索之一。没有阴影，物体会"漂浮"在场景中，缺乏空间感。本课将学习阴影映射（Shadow Mapping）——现代渲染引擎中最主流的实时
 tags: [opengl, 图形学, 阴影]
 date: 2025-01-01

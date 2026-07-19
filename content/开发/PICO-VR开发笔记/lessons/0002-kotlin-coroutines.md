@@ -1,5 +1,5 @@
 ---
-title: 第2课：Kotlin 协程基础
+title: "第02课：Kotlin 协程基础"
 description: 学习 Kotlin 协程的核心概念——launch、async/await、挂起函数、调度器与结构化并发，并通过 Java 并发模型对比加深理解。
 ---
 

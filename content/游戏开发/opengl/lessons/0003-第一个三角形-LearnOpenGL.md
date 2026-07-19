@@ -1,5 +1,5 @@
 ---
-title: 第0003课：第一个三角形 | LearnOpenGL
+title: "第03课：第一个三角形 | LearnOpenGL"
 description: LearnOpenGL 系列 · 零基础图形编程
 tags: [opengl, 图形学, 着色器]
 date: 2025-01-01

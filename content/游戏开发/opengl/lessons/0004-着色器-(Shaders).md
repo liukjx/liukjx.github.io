@@ -1,5 +1,5 @@
 ---
-title: 第 4 课：着色器 (Shaders) — GPU 编程入门
+title: "第04课：着色器 (Shaders) — GPU 编程入门"
 description: 从固定功能到可编程管线，用 GLSL 让 GPU 为你作画。
 tags: [opengl, 图形学, 着色器, 材质]
 date: 2025-01-01

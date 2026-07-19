@@ -1,5 +1,5 @@
 ---
-title: 第0019课：帧缓冲 (Framebuffers) - LearnOpenGL
+title: "第19课：帧缓冲 (Framebuffers) - LearnOpenGL"
 description: 在前面的课程中，我们学习了模型加载、深度测试和模板测试。所有渲染都直接输出到屏幕上的默认帧缓冲。本课将介绍自定义帧缓冲，这是实现后处理特效、阴影映射、镜面反射等
 tags: [opengl, 图形学, 帧缓冲]
 date: 2025-01-01

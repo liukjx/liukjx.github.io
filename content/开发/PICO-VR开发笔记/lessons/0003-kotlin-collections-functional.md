@@ -1,5 +1,5 @@
 ---
-title: 第3课：Kotlin 集合与函数式编程
+title: "第03课：Kotlin 集合与函数式编程"
 description: Kotlin 集合操作与作用域函数（let、apply、run、with、also）详解，以及 PICO Demo 中的函数式编程模式。
 ---
 

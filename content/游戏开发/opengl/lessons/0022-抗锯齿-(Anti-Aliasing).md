@@ -1,5 +1,5 @@
 ---
-title: 第0022课：抗锯齿 (Anti Aliasing) - LearnOpenGL
+title: "第22课：抗锯齿 (Anti Aliasing) - LearnOpenGL"
 description: 本课探讨渲染中的锯齿（Aliasing）问题及其解决方案——抗锯齿（Anti Aliasing, AA）。锯齿是实时图形学中最常见的视觉瑕疵之一，表现为物体边缘
 tags: [opengl, 图形学, 抗锯齿]
 date: 2025-01-01

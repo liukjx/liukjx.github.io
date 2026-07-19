@@ -1,5 +1,5 @@
 ---
-title: 第 1 课：你好，OpenGL！— 图形世界的入口
+title: "第01课：你好，OpenGL！— 图形世界的入口"
 description: 在你眼前打开一扇通往 3D 图形世界的窗口。
 tags: [opengl, 图形学]
 date: 2025-01-01

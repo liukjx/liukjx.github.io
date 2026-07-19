@@ -1,5 +1,5 @@
 ---
-title: "第5课：Android 项目结构与 Gradle 构建"
+title: "第05课：Android 项目结构与 Gradle 构建"
 description: 学习 Android 项目的目录结构、Gradle 构建配置、AndroidManifest.xml 以及 PICO SDK 特有的构建设置。
 ---
 

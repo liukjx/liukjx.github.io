@@ -1,5 +1,5 @@
 ---
-title: "补充课1：Compose 副作用与高级主题"
+title: "补充课01：Compose 副作用与高级主题"
 description: |
   Compose 中的"副作用"是指发生在 Composable 函数范围之外的操作——比如网络请求、数据库写入、事件订阅。由于 Composable 函数可能在重组中频繁调用，不能直接在其中写副作用代码，必须使用 Compose 提供的安全副作用 API。
 ---

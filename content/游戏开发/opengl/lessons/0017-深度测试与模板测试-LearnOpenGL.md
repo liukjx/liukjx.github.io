@@ -1,5 +1,5 @@
 ---
-title: 第0017课：深度测试与模板测试 | LearnOpenGL
+title: "第17课：深度测试与模板测试 | LearnOpenGL"
 description: 在前面的课程中，我们通过简单的 glEnable(GL_DEPTH_TEST) 开启了深度测试，解决了物体的前后遮挡问题。但深度测试远不止如此——它涉及深度值的
 tags: [opengl, 图形学]
 date: 2025-01-01

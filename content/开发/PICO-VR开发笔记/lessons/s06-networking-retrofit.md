@@ -1,5 +1,5 @@
 ---
-title: "第S6课：Android 网络请求 — Retrofit"
+title: "补充课06：Android 网络请求 — Retrofit"
 description: "从 HttpURLConnection 到 Retrofit 的声明式网络请求，涵盖基础配置、API 接口定义、ViewModel 集成、文件上传下载及 OkHttp 拦截器"
 ---
 

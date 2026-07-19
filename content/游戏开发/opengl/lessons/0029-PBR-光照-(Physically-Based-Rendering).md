@@ -1,5 +1,5 @@
 ---
-title: 第0029课：PBR 光照 (Physically Based Rendering)
+title: "第29课：PBR 光照 (Physically Based Rendering)"
 description: 基于物理的渲染 —— 现代图形学的光照基石
 tags: [opengl, 图形学, PBR, 纹理, 材质]
 date: 2025-01-01

@@ -1,5 +1,27 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { QuartzPluginData } from "./quartz/plugins/vfile"
+import { isFolderPath } from "./quartz/util/path"
+
+const naturalCollator = new Intl.Collator("zh-CN", {
+  numeric: true,
+  sensitivity: "base",
+})
+
+function slugSortKey(file: QuartzPluginData): string {
+  const slug = file.slug ?? ""
+  const withoutIndex = slug.endsWith("/index") ? slug.slice(0, -"/index".length) : slug
+  return withoutIndex.split("/").filter(Boolean).at(-1) ?? file.frontmatter?.title ?? ""
+}
+
+function byFolderThenSlug(f1: QuartzPluginData, f2: QuartzPluginData): number {
+  const f1IsFolder = isFolderPath(f1.slug ?? "")
+  const f2IsFolder = isFolderPath(f2.slug ?? "")
+  if (f1IsFolder && !f2IsFolder) return -1
+  if (!f1IsFolder && f2IsFolder) return 1
+
+  return naturalCollator.compare(slugSortKey(f1), slugSortKey(f2))
+}
 
 /**
  * Quartz 4.0 Configuration
@@ -71,7 +93,7 @@ const config: QuartzConfig = {
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
-      Plugin.FolderPage(),
+      Plugin.FolderPage({ sort: byFolderThenSlug }),
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,

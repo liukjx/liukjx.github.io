@@ -1,5 +1,5 @@
 ---
-title: 第0023课：Blinn-Phong 与 Gamma 校正 | LearnOpenGL 教学
+title: "第23课：Blinn-Phong 与 Gamma 校正 | LearnOpenGL 教学"
 description: 在前面的课程中，我们学习了 Phong 光照模型。它虽然简单有效，但在某些角度下会出现明显的高光断裂问题。同时，我们还忽略了显示器的一个"小秘密"——它并不按线
 tags: [opengl, 图形学, 颜色]
 date: 2025-01-01

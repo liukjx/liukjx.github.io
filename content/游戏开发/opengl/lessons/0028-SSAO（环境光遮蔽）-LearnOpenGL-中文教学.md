@@ -1,5 +1,5 @@
 ---
-title: 第0028课：SSAO（环境光遮蔽） | LearnOpenGL 中文教学
+title: "第28课：SSAO（环境光遮蔽） | LearnOpenGL 中文教学"
 description: 理解环境光遮蔽的原理，掌握 SSAO 在屏幕空间的采样算法及其在商业引擎中的应用。
 tags: [opengl, 图形学, SSAO]
 date: 2025-01-01

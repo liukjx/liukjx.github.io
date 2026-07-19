@@ -1,5 +1,5 @@
 ---
-title: "第S07课：PICO SDK 补充API参考"
+title: "补充课07：PICO SDK 补充API参考"
 description: "PICO Spatial SDK 0.13.3 中存在于 API 文档但未被 15 课主课程覆盖的全部 API，按实用价值分组并附代码示例，可作为开发中的速查手册"
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "第9课：Spatial Core & ECS 架构"
+title: "第09课：Spatial Core & ECS 架构"
 description: "spatial-core 是 PICO SDK 的心脏模块。它基于实体-组件-系统（ECS）模式管理所有 3D 场景内容。理解 ECS 是理解 PICO 空间应用的钥匙。"
 ---
 

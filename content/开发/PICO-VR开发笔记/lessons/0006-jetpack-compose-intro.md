@@ -1,5 +1,5 @@
 ---
-title: "第6课：Jetpack Compose 声明式 UI"
+title: "第06课：Jetpack Compose 声明式 UI"
 description: "Jetpack Compose 是 Android 的现代 UI 框架——用 Kotlin 代码声明 UI，而不是 XML 布局文件。PICO 的 Spatial UI 基于 Compose 构建，二者共享相同的声明式范式。"
 ---
 
