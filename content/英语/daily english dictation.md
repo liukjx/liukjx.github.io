@@ -10,14 +10,14 @@ draft: "false"
 
 ### 基本规则
 
-| 现象 | LaTeX 写法 | 渲染效果 | 含义 |
-|:---|:---|:---|:---|
-| **连读** | `\underset{\smile}{s\ o}` | $s\underset{\smile}{o}$ | 两个单词之间连读（s 和 o 连起来读） |
-| **音标注读** | `\underbrace{\text{for her}}_{\text{/fɚ‿ɚ/}}` | $\underbrace{\text{for her}}_{\text{/fɚ‿ɚ/}}$ | 单词的实际发音（IPA 国际音标） |
-| **省音** | `\cancel{d}` | $\cancel{d}$ | 画叉的字母不发音 |
-| **实际读法** | `\overset{[实际]}{\overline{书面}}` | $\overset{[juss]}{\overline{just}}$ | 上面方括号内是真实发音，下面是原词 |
-| **T 变化** | `\overset{[d]}{\overline{to}}` | $\overset{[d]}{\overline{to}}$ | to → /d/，展示具体变音 |
-| **沉默字母** | `\overset{×}{\overline{'t}}` | $\overset{×}{\overline{'t}}$ | × 表示这部分的发音被完全省略 |
+| 现象       | LaTeX 写法                                      | 渲染效果                                          | 含义                   |
+| :------- | :-------------------------------------------- | :-------------------------------------------- | :------------------- |
+| **连读**   | `\underset{\smile}{s\ o}`                     | $s\underset{\smile}{o}$                       | 两个单词之间连读（s 和 o 连起来读） |
+| **音标注读** | `\underbrace{\text{for her}}_{\text{/fɚ‿ɚ/}}` | $\underbrace{\text{for her}}_{\text{/fɚ‿ɚ/}}$ | 单词的实际发音（IPA 国际音标）    |
+| **省音**   | `\cancel{d}`                                  | $\cancel{d}$                                  | 画叉的字母不发音             |
+| **实际读法** | `\overset{[实际]}{\overline{书面}}`               | $\overset{[juss]}{\overline{just}}$           | 上面方括号内是真实发音，下面是原词    |
+| **T 变化** | `\overset{[d]}{\overline{to}}`                | $\overset{[d]}{\overline{to}}$                | to → /d/，展示具体变音      |
+| **沉默字母** | `\overset{×}{\overline{'t}}`                  | $\overset{×}{\overline{'t}}$                  | × 表示这部分的发音被完全省略      |
 
 ### 标注优先级
 
