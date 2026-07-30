@@ -1,0 +1,54 @@
+/* storytelling-masterclass Shared Styles for Obsidian */
+
+/* --- Course-specific colors --- */
+:root {
+    --story-primary: #1a5276;
+    --story-accent: #e74c3c;
+    --story-highlight: #f39c12;
+    --story-bg-light: #f8f9fa;
+    --story-border: #dee2e6;
+}
+
+/* --- Callout customization --- */
+.callout[data-callout="quote"] {
+    --callout-color: 26, 82, 118;
+    --callout-icon: quote;
+}
+
+/* --- Mermaid diagram tweaks --- */
+.mermaid {
+    background: var(--story-bg-light);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+/* --- Course index table styling --- */
+.course-table th {
+    background: var(--story-primary);
+    color: white;
+}
+
+.course-table tr:nth-child(even) {
+    background: var(--story-bg-light);
+}
+
+/* --- Knowledge gap callout --- */
+.callout[data-callout="gap"] {
+    --callout-color: 243, 156, 18;
+    --callout-icon: search;
+}
+
+/* --- Definition block --- */
+.definition {
+    border-left: 4px solid var(--story-primary);
+    padding: 12px 16px;
+    margin: 16px 0;
+    background: var(--story-bg-light);
+    border-radius: 0 4px 4px 0;
+}
+
+.definition p {
+    margin: 0;
+    font-style: italic;
+}

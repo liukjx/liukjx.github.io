@@ -1,0 +1,35 @@
+/* Course-specific Obsidian styling */
+/* Paste into .obsidian/snippets/ and enable in Settings > Appearance */
+
+/* Lesson numbering in sidebar */
+.nav-file-title[data-path^="lessons/"] .nav-file-title-content::before {
+  content: attr(data-path);
+  font-size: 0.8em;
+  opacity: 0.6;
+  margin-right: 4px;
+}
+
+/* Callout refinements for study notes */
+.callout[data-callout="question"] {
+  --callout-icon: lucide-help-circle;
+}
+
+.callout[data-callout="example"] {
+  --callout-icon: lucide-eye;
+}
+
+/* Glossary term styling */
+strong:has(+ : matches(":")) {
+  color: var(--text-accent);
+}
+
+/* Table compact for references */
+.reference-table th {
+  white-space: nowrap;
+}
+
+/* Mermaid diagram centering */
+.mermaid {
+  text-align: center;
+  margin: 1em 0;
+}
