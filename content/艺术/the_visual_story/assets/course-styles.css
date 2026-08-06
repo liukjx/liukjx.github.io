@@ -1,0 +1,28 @@
+/* Visual Story Course - Obsidian Snippet */
+/* 为《The Visual Story》课程笔记优化 Obsidian 渲染 */
+
+/* 课程 callout 样式增强 */
+.callout[data-callout="example"] {
+  --callout-color: 100, 180, 255;
+}
+
+.callout[data-callout="question"] {
+  --callout-color: 255, 180, 50;
+}
+
+/* Mermaid 图表居中 */
+.mermaid {
+  text-align: center;
+  margin: 1em 0;
+}
+
+/* 表格美观优化 */
+.markdown-preview-view table {
+  font-size: 0.9em;
+}
+
+/* 课程索引中的模块标题 */
+h2:has(+ table) {
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 4px;
+}
