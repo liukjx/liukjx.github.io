@@ -531,7 +531,7 @@ function increment() {
 4. Keep-Alive 的作用是什么？配合它有哪些生命周期钩子？
 
 <details>
-<summary查看答案</summary>
+<summary>查看答案</summary>
 
 1. Props 用于父向子传递数据（单向数据流），Emits 用于子向父传递消息
 2. 具名插槽通过 name 区分多个插槽位置；作用域插槽允许子组件向父组件插槽暴露数据
