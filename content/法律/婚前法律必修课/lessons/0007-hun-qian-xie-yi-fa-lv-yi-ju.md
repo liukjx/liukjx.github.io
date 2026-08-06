@@ -7,8 +7,8 @@ tags:
   - law
   - marriage
   - prenuptial
-  -婚前协议
-  -民法典
+  - 婚前协议
+  - 民法典
 aliases:
   - 婚前财产协议的法律依据
 draft: false

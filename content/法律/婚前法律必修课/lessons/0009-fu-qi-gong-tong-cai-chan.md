@@ -7,7 +7,7 @@ tags:
   - law
   - marriage
   - property
-  -民法典
+  - 民法典
 aliases:
   - 哪些财产是夫妻共同财产
 draft: false

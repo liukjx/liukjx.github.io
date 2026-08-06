@@ -7,7 +7,7 @@ tags:
   - law
   - marriage
   - prenuptial
-  -婚前协议
+  - 婚前协议
 aliases:
   - 对婚前协议的4个误解
 draft: false

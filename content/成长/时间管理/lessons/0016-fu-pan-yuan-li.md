@@ -5,7 +5,7 @@ date: 2026-08-03
 tags:
   - time-management
   - reflection
-  -复盘
+  - 复盘
 draft: false
 aliases:
   - 复盘原理

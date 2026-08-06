@@ -7,7 +7,7 @@ tags:
   - law
   - marriage
   - bride-price
-  -彩礼
+  - 彩礼
 aliases:
   - 彩礼什么情况下需要退回
 draft: false

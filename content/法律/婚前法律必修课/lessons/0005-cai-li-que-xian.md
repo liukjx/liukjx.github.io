@@ -1,5 +1,5 @@
 ---
-title: "第05课：彩礼还有哪些"缺陷""
+title: "第05课：彩礼还有哪些“缺陷”"
 description: "分析彩礼与婚后财产混同风险、被借走的债务风险，以及如何隔离保护彩礼"
 date: 2026-08-04
 tags:
@@ -7,7 +7,7 @@ tags:
   - law
   - marriage
   - bride-price
-  -彩礼
+  - 彩礼
 aliases:
   - 彩礼还有哪些缺陷
 draft: false

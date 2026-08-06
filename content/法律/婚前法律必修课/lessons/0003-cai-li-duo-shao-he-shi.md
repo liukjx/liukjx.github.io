@@ -7,7 +7,7 @@ tags:
   - law
   - marriage
   - bride-price
-  -彩礼
+  - 彩礼
 aliases:
   - 彩礼要多少合适
 draft: false

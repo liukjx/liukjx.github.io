@@ -1,5 +1,5 @@
 ---
-title: "第02课：用财商教育拯救"被宠坏"的孩子"
+title: "第02课：用财商教育拯救“被宠坏”的孩子"
 description: "被宠坏孩子的特征、直升机父母与割草机父母、财商教育作为解决方案"
 date: 2026-08-04
 tags: [fanai, financial-literacy, module-1, spoiled-children]

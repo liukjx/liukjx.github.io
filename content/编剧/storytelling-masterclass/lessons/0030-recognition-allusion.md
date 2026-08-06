@@ -1,6 +1,6 @@
 ---
 title: "第30课：识别与文化典故"
-description: "Recognition and Cultural Allusion——当接收者"认出"某种模式时"
+description: "Recognition and Cultural Allusion——当接收者“认出”某种模式时"
 date: 2026-07-30
 tags:
   - storytelling
