@@ -47,7 +47,7 @@ jobs:
       - name: Process Anime.js animations
         run: node scripts/process-animejs.js quartz/public
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: quartz/public
 
